@@ -6,7 +6,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://sparkland.ralvines.top/engine/</loc>
+         <lastmod>2024-09-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://sparkland.ralvines.top/formal/</loc>
+         <lastmod>2024-09-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://sparkland.ralvines.top/home/tags/</loc>
+         <lastmod>2024-09-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://sparkland.ralvines.top/human/</loc>
+         <lastmod>2024-09-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://sparkland.ralvines.top/nature/</loc>
          <lastmod>2024-09-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
