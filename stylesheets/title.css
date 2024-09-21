@@ -1,0 +1,35 @@
+/*
+ * title.css
+ * 大标题。
+ */
+
+.items-center {
+    display:flex;
+    border-bottom: .05rem solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset .items-center-text {
+    margin: auto 0;
+}
+
+.md-typeset .items-center-text h2 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.md-typeset .items-center-text p {
+    font-size: .7rem;
+    padding: 0;
+    margin-top: 0;
+}
+
+.items-center-left {
+    align-items: center;
+    font-size: 2rem;
+    display:flex;
+    padding: 5px;
+    margin-right: .5rem;
+    float:left;
+}
