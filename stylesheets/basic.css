@@ -279,9 +279,9 @@ html .md-footer-meta.md-typeset a {
 }
 
 [data-md-color-scheme="slate"] .md-copyright__highlight {
-	color: #000;
+	color: #fff;
 }
 
-[data-md-color-scheme="slate"] html .md-footer-meta.md-typeset a {
-	color: #000;
+html [data-md-color-scheme="slate"] .md-footer-meta.md-typeset a {
+	color: #fff;
 }
