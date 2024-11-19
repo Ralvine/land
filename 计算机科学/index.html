@@ -1,0 +1,693 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="明日巴陵道，秋山又几重。" name="description"/>
+<link href="https://sparkland.ralvines.top/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="canonical"/>
+<link href="../home/tags/" rel="prev"/>
+<link href="%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" rel="next"/>
+<link href="../assets/logo.png" rel="icon"/>
+<meta content="mkdocs-1.4.3, mkdocs-material-9.1.9" name="generator"/>
+<title>计算机科学</title>
+<link href="../assets/stylesheets/main.85bb2934.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.a6bdf11c.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Noto Serif SC";--md-code-font:"Roboto Mono"}</style>
+<link href="../css/timeline.css" rel="stylesheet"/>
+<link href="../stylesheets/basic.css" rel="stylesheet"/>
+<link href="../stylesheets/title.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<!--style>.md-typeset h1,.md-content__button {display:none !important}; </style-->
+<style>.md-header__topic {font-weight:700 !important}</style>
+<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="cyan" data-md-color-primary="white" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#软件工程">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="即昼" class="md-header__button md-logo" data-md-component="logo" href=".." title="即昼">
+<img alt="logo" src="../assets/logo.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            即昼
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              计算机科学
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="" class="md-option" data-md-color-accent="cyan" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="white" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"></path></svg>
+</label>
+<input aria-label="" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"></path></svg>
+</a>
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+        🏡 首页
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="./">
+        💻 计算机科学
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="即昼" class="md-nav__button md-logo" data-md-component="logo" href=".." title="即昼">
+<img alt="logo" src="../assets/logo.png"/>
+</a>
+    即昼
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="..">🏡 首页</a>
+<label for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+          🏡 首页
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../home/tags/">
+        🔖 标签
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index md-nav__link--active">
+<a href="./">💻 计算机科学</a>
+<label for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          💻 计算机科学
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">⌨️ 软件工程</a>
+<label for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+          ⌨️ 软件工程
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_2">
+<span class="md-nav__icon md-icon"></span>
+          数据结构与算法
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">面向对象程序设计</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_3">
+<span class="md-nav__icon md-icon"></span>
+          面向对象程序设计
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">🤖 人工智能</a>
+<label for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+          🤖 人工智能
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
+          统计学习
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_2">
+<span class="md-nav__icon md-icon"></span>
+          统计学习
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/k%E8%BF%91%E9%82%BB%E6%B3%95/">
+        𝟏. k近邻法
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#软件工程">
+    软件工程
+  </a>
+<nav aria-label="软件工程" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#版本控制">
+    版本控制
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#程序设计">
+    程序设计
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#web开发">
+    Web开发
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#人工智能">
+    人工智能
+  </a>
+<nav aria-label="人工智能" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#机器学习">
+    机器学习
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<!--h1>计算机科学</h1-->
+<div class="items-center">
+<div class="items-center-left">💻</div>
+<div class="items-center-text">
+<h2>计算机科学</h2>
+<p>Computer Science</p>
+</div>
+</div>
+<h2 id="软件工程">软件工程<a class="headerlink" href="#软件工程" title="跳转到此部分">·</a></h2>
+<h3 id="版本控制">版本控制<a class="headerlink" href="#版本控制" title="跳转到此部分">·</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> Git</li>
+</ul>
+<h3 id="程序设计">程序设计<a class="headerlink" href="#程序设计" title="跳转到此部分">·</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input checked="" disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> 数据结构与算法</li>
+<li class="task-list-item"><label class="task-list-control"><input checked="" disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> 面向对象程序设计</li>
+</ul>
+<h3 id="web开发">Web开发<a class="headerlink" href="#web开发" title="跳转到此部分">·</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> 静态博客</li>
+</ul>
+<h2 id="人工智能">人工智能<a class="headerlink" href="#人工智能" title="跳转到此部分">·</a></h2>
+<h3 id="机器学习">机器学习<a class="headerlink" href="#机器学习" title="跳转到此部分">·</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input checked="" disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> 统计学习</li>
+</ul>
+<!-- 
+
+## 计算机理论
+
+## 计算机系统
+
+- 操作系统
+- 分布式
+- 数据库
+- 计算机网络
+- 高性能计算
+- 网络安全
+- 嵌入式系统
+
+## 信息安全
+
+## 人工智能
+
+- 机器学习
+- 数据挖掘
+- 计算机视觉
+- 自然语言处理
+- 信息检索
+
+## 大数据 -->
+<!-- ## 基础
+
+这些领域为人工智能、计算机图形学、计算机视觉等高层次学科提供基础和工具。
+
+- 算法
+    - [ ] 基础算法设计与分析
+    - [ ] 数据结构优化（树、图、堆、哈希表等）
+    - [ ] 并行与分布式算法
+    - [ ] 近似算法与随机算法
+    - [ ] 算法复杂性理论
+    - [ ] 基础数据结构（Basic Data Structures）：如数组、链表、树、图等
+    - [ ] 算法基础（Algorithms Basics）：排序、搜索、图算法等
+    - [ ] 高级数据结构与算法（Advanced Data Structures & Algorithms）：如红黑树、并查集、动态规划等
+    - [ ] 算法复杂度分析（Complexity Analysis）
+    - [ ] 算法优化与高效计算（Algorithm Optimization & Efficient Computing）
+- 计算机理论
+    - [ ] 计算复杂性理论
+    - [ ] 自动机与形式语言
+    - [ ] 图论与组合优化
+    - [ ] 编码与信息论
+    - [ ] 可计算性与不可计算性
+- 编程语言范式与编译原理
+    - [ ] 编程语言设计（类型系统、函数式编程、面向对象编程等）
+    - [ ] 编译器与解释器构建
+    - [ ] 静态分析与优化
+    - [ ] 自动化测试与调试
+    - [ ] 领域特定语言（DSL）
+    - [ ] 编程语言（Programming Languages）：如Python、Java、C++、JavaScript等
+    - [ ] 面向对象编程（Object-Oriented Programming, OOP）
+    - [ ] 函数式编程（Functional Programming）
+    - [ ] 逻辑编程（Logic Programming）
+    - [ ] 并行与分布式编程（Parallel & Distributed Programming）
+- 计算理论基础（Theoretical Foundations of Computing）
+    - [ ] 自动机与编译原理（Automata & Compiler Theory）
+    - [ ] 形式语言与语言处理（Formal Languages & Language Processing）
+    - [ ] 可计算性与复杂性理论（Computability & Complexity Theory）
+    - [ ] 程序验证与静态分析（Program Verification & Static Analysis）
+- 操作系统与计算机体系结构
+    - [ ] 操作系统设计与实现
+    - [ ] 并发与多线程
+    - [ ] 分布式系统与容错性
+    - [ ] 嵌入式系统与实时操作系统
+    - [ ] 计算机体系结构与硬件优化
+- 网络与通信
+    - [ ] 计算机网络协议与架构（TCP/IP、HTTP等）
+    - [ ] 无线与移动网络
+    - [ ] 物联网（IoT）与边缘计算
+    - [ ] 网络安全与隐私
+    - [ ] 分布式系统与对等网络
+- 数据库系统与信息检索
+    - [ ] 数据库管理系统（DBMS）设计
+    - [ ] 大数据存储与查询优化
+    - [ ] 信息检索与搜索引擎
+    - [ ] 数据挖掘与知识发现
+    - [ ] 云计算与数据中心技术
+
+## 开发
+
+该方向强调软件开发的流程、管理、以及系统化的架构设计。
+
+- 软件工程原理与方法论（Software Engineering Principles & Methodologies）
+    - [ ] 软件开发生命周期（Software Development Life Cycle, SDLC）
+    - [ ] 敏捷开发与精益开发（Agile & Lean Development）
+    - [ ] 持续集成与持续交付（Continuous Integration & Continuous Delivery, CI/CD）
+    - [ ] 版本控制与协同开发（Version Control & Collaborative Development）
+    - [ ] 软件项目管理（Software Project Management）
+- 系统架构设计（System Architecture Design）
+    - [ ] 单体架构与微服务架构（Monolithic & Microservices Architecture）
+    - [ ] 服务网格与容器编排（Service Mesh & Container Orchestration, 如Kubernetes）
+    - [ ] 分布式系统设计（Distributed Systems Design）
+    - [ ] 面向服务架构（Service-Oriented Architecture, SOA）
+    - [ ] 架构模式（Architecture Patterns）：如MVC、MVVM、Event-Driven等
+- 软件需求分析与设计模式（Software Requirements Analysis & Design Patterns）
+    - [ ] 需求分析与规格说明（Requirements Analysis & Specification）
+    - [ ] 设计模式（Design Patterns）：如工厂模式、单例模式、观察者模式等
+    - [ ] 架构设计模式（Architectural Design Patterns）：如Repository、CQRS等
+    - [ ] UML与软件建模（Unified Modeling Language & Software Modeling）
+    - [ ] 用户故事与用户体验设计（User Stories & UX Design）
+- 前端开发（Frontend Development）
+    - [ ] 前端框架与库（Frontend Frameworks & Libraries）：如React、Vue、Angular
+    - [ ] 响应式设计与CSS框架（Responsive Design & CSS Frameworks）：如Bootstrap、Tailwind
+    - [ ] 前端性能优化（Frontend Performance Optimization）
+    - [ ] 图形界面开发（GUI Development）
+    - [ ] 交互设计与用户体验优化（Interaction Design & UX Optimization）
+- 后端开发（Backend Development）
+    - [ ] 后端框架（Backend Frameworks）：如Express、Django、Spring
+    - [ ] 数据库管理与设计（Database Management & Design）：如SQL、NoSQL
+    - [ ] API开发与RESTful设计（API Development & RESTful Design）
+    - [ ] 缓存与数据存储优化（Caching & Data Storage Optimization）
+    - [ ] 身份验证与授权（Authentication & Authorization）
+- 移动与多端开发（Mobile & Cross-Platform Development）
+    - [ ] 移动开发框架（Mobile Development Frameworks）：如Flutter、React Native、Swift、Kotlin
+    - [ ] 跨平台开发工具（Cross-Platform Development Tools）
+    - [ ] 响应式布局与自适应设计（Responsive Layout & Adaptive Design）
+    - [ ] 小程序与PWA（Mini Programs & Progressive Web Apps, PWA）
+    - [ ] 移动应用性能优化（Mobile App Performance Optimization）
+- 软件测试
+    - [ ] 测试策略与测试类型（Testing Strategies & Types of Testing）
+    - [ ] 单元测试、集成测试、系统测试（Unit Testing, Integration Testing, System Testing）
+    - [ ] 回归测试（Regression Testing）
+    - [ ] 性能测试与负载测试（Performance & Load Testing）
+    - [ ] 功能测试与验收测试（Functional & Acceptance Testing）
+    - [ ] 安全测试（Security Testing）
+    - [ ] 测试自动化工具（Testing Automation Tools）：如Selenium、JUnit、TestNG
+    - [ ] 持续集成中的自动化测试（Automated Testing in CI/CD）
+    - [ ] 端到端测试与UI自动化测试（End-to-End Testing & UI Automation）
+    - [ ] 测试脚本与测试数据管理（Test Scripting & Test Data Management）
+    - [ ] Mocking与Stub的使用（Use of Mocks & Stubs）
+- 软件质量管理与度量（Software Quality Management & Metrics）
+    - [ ] 代码质量检查与静态分析（Code Quality & Static Analysis）
+    - [ ] 软件质量标准（Software Quality Standards）：如ISO、CMMI
+    - [ ] 缺陷管理与追踪（Defect Management & Tracking）
+    - [ ] 可维护性与代码重构（Maintainability & Code Refactoring）
+    - [ ] 软件度量与质量控制（Software Metrics & Quality Control）
+
+## 人工智能与机器学习
+
+人工智能涵盖多个子领域，研究如何模拟人类智能。
+
+- 机器学习（Machine Learning）
+    - [ ] 监督学习、无监督学习、半监督学习
+    - [ ] 深度学习（卷积神经网络、循环神经网络、生成对抗网络）
+    - [ ] 强化学习与多智能体系统
+    - [ ] 联邦学习与隐私保护
+    - [ ] 小样本学习与元学习
+- 自然语言处理（Natural Language Processing, NLP）
+    - [ ] 语言模型与文本生成（GPT、BERT等）
+    - [ ] 机器翻译（神经机器翻译、统计机器翻译）
+    - [ ] 情感分析与文本分类
+    - [ ] 信息抽取（命名实体识别、关系抽取）
+    - [ ] 语音识别与合成
+- 机器人学（Robotics）
+    - [ ] 运动规划与路径规划
+    - [ ] 机器人感知（视觉、触觉、声觉等）
+    - [ ] 多机器人协作与智能体系统
+    - [ ] 增强现实（AR）与虚拟现实（VR）
+    - [ ] 医疗机器人、农业机器人、工业机器人等应用
+- 强化学习（Reinforcement Learning）
+    - [ ] 值函数与策略优化
+    - [ ] 深度强化学习（DQN、DDPG等）
+    - [ ] 自适应控制与逆强化学习
+    - [ ] 多智能体强化学习
+    - [ ] 游戏智能与自我博弈
+
+## 数据科学与知识发现
+
+研究如何从数据中发现有意义的信息与模式。
+
+- 数据挖掘（Data Mining）
+    - [ ] 关联规则与频繁模式挖掘
+    - [ ] 聚类分析与聚类算法
+    - [ ] 时序数据挖掘与预测
+    - [ ] 社交网络分析
+    - [ ] 异常检测与异常分析
+- 大数据技术（Big Data Technology）
+    - [ ] 大数据存储与管理（Hadoop、Spark等）
+    - [ ] 分布式计算与并行处理
+    - [ ] 实时流处理与事件检测
+    - [ ] 数据清洗与数据预处理
+    - [ ] 大规模数据可视化
+- 知识图谱（Knowledge Graphs）
+    - [ ] 知识抽取与知识表示
+    - [ ] 语义网络与本体论
+    - [ ] 知识推理与知识问答
+    - [ ] 知识图谱应用（搜索引擎、推荐系统）
+    - [ ] 自动化推理与决策支持
+
+## 信息安全与隐私保护
+
+保护信息和系统的安全性、完整性和保密性。
+
+- 网络安全（Network Security）
+    - [ ] 网络攻击与防御（DDoS、MITM攻击等）
+    - [ ] 加密与公钥基础设施（PKI）
+    - [ ] 防火墙与入侵检测系统
+    - [ ] 区块链与去中心化技术
+    - [ ] 安全协议与网络防护
+- 隐私保护与数据安全
+    - [ ] 数据匿名化与去标识化
+    - [ ] 差分隐私与联邦学习
+    - [ ] 安全多方计算
+    - [ ] 数据使用和共享的隐私保护
+    - [ ] 生物识别与身份认证
+
+## 计算机图形学与视觉计算
+
+包括图形生成与图像分析等领域。
+
+- 计算机图形学（Computer Graphics）
+    - [ ] 图形渲染（光栅化、光线追踪等）
+    - [ ] 物理模拟（流体、刚体、柔体模拟）
+    - [ ] 3D建模与细分曲面
+    - [ ] 纹理映射与材质生成
+    - [ ] 虚拟现实与增强现实
+- 计算机视觉（Computer Vision）
+    - [ ] 视觉识别（图像分类、物体检测）
+    - [ ] 图像分割与轮廓检测
+    - [ ] 三维重建与深度估计
+    - [ ] 人脸识别与手势识别
+    - [ ] 图像风格转换与超分辨率
+    - [ ] 虚拟现实与增强现实（Virtual and Augmented Reality）
+- 虚拟场景渲染与交互
+    - [ ] 人机交互与自然交互设计
+    - [ ] 增强现实设备与技术
+    - [ ] 三维显示与空间定位
+    - [ ] 多感官交互与沉浸式体验
+
+## 跨学科研究领域
+
+结合多个学科的理论与方法，推动新型应用的发展。
+
+- 人机交互（Human-Computer Interaction, HCI）
+    - [ ] 用户界面设计与可用性
+    - [ ] 可穿戴设备与移动交互
+    - [ ] 情感计算与情绪识别
+    - [ ] 无障碍技术与辅助交互
+    - [ ] 交互体验与用户心理
+- 量子计算（Quantum Computing）
+    - [ ] 量子算法（如Shor算法、Grover算法）
+    - [ ] 量子纠错与量子容错
+    - [ ] 量子机器学习
+    - [ ] 量子通信与密码学
+    - [ ] 量子硬件开发
+- 生物信息学与计算生物学（Bioinformatics & Computational Biology）
+    - [ ] 基因组与蛋白质结构预测
+    - [ ] 生物网络与系统生物学
+    - [ ] 蛋白质相互作用与药物设计
+    - [ ] 生物数据挖掘与分析
+    - [ ] 临床数据与医疗应用
+- 社会计算与智能系统（Social Computing & Intelligent Systems）
+    - [ ] 社会网络分析与传播
+    - [ ] 群体智能与协同系统
+    - [ ] 情感计算与社会机器人
+    - [ ] 决策支持系统与智能推荐
+    - [ ] 智能经济系统（如预测市场、区块链） -->
+<!-- <hr>
+<div class="md-source-file">
+  <small>
+    
+  </small>
+</div> -->
+<!--
+-->
+</article>
+</div>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            回到页面顶部
+          </button>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid" hidden="">
+<a aria-label="上一页: 🔖 标签" class="md-footer__link md-footer__link--prev" href="../home/tags/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                上一页
+              </span>
+<div class="md-ellipsis">
+                🔖 标签
+              </div>
+</div>
+</a>
+<a aria-label="下一页: Index" class="md-footer__link md-footer__link--next" href="%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" rel="next">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                下一页
+              </span>
+<div class="md-ellipsis">
+                Index
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+<b>𝐴𝑙𝑤𝑎𝑦𝑠 𝑜𝑛 𝒕𝒉𝒆 𝒓𝒐𝒂𝒅.</b><br/>𝐒𝐩𝐚𝐫𝐤𝙻𝚊𝚗𝚍 © 2015-2024
+    </div>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://github.com/Ralvine" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+<a class="md-social__link" href="mailto:ralvine.yjy@hotmail.com" rel="noopener" target="_blank" title="">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l217.6 163.2c11.4 8.5 27 8.5 38.4 0l217.6-163.2c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48H48zM0 176v208c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V176L294.4 339.2a63.9 63.9 0 0 1-76.8 0L0 176z"></path></svg>
+</a>
+<a class="md-social__link" href="http://sparkland.ralvines.top/feed_rss_created.xml" rel="noopener" target="_blank" title="sparkland.ralvines.top">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 64c0-17.7 14.3-32 32-32 229.8 0 416 186.2 416 416 0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96 14.3 96 0 81.7 0 64zm0 352a64 64 0 1 1 128 0 64 64 0 1 1-128 0zm32-256c159.1 0 288 128.9 288 288 0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224-17.7 0-32-14.3-32-32s14.3-32 32-32z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.prune", "toc.follow", "content.code.annotate", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "navigation.footer"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../assets/javascripts/bundle.fac441b0.min.js"></script>
+<script src="../javascripts/mathjax.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "fade", "closeEffect": "fade", "slideEffect": "slide"});})</script></body>
+</html>

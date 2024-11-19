@@ -48,7 +48,7 @@
 .media-meta-item.title {
     font-weight: 700;
     font-size:.85em;
-    font-family: Noto Serif SC;
+    font-family: Noto Serif SC, serif;
 }
 
 .media-cover {

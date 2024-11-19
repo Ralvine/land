@@ -1,0 +1,1279 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="明日巴陵道，秋山又几重。" name="description"/>
+<link href="https://sparkland.ralvines.top/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" rel="canonical"/>
+<link href="../" rel="prev"/>
+<link href="../%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" rel="next"/>
+<link href="../../../assets/logo.png" rel="icon"/>
+<meta content="mkdocs-1.4.3, mkdocs-material-9.1.9" name="generator"/>
+<title>数据结构与算法 - 即昼</title>
+<link href="../../../assets/stylesheets/main.85bb2934.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.a6bdf11c.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Noto Serif SC";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../css/timeline.css" rel="stylesheet"/>
+<link href="../../../stylesheets/basic.css" rel="stylesheet"/>
+<link href="../../../stylesheets/title.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="cyan" data-md-color-primary="white" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#数据结构与算法">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="即昼" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="即昼">
+<img alt="logo" src="../../../assets/logo.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            即昼
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              数据结构与算法
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="" class="md-option" data-md-color-accent="cyan" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="white" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"></path></svg>
+</label>
+<input aria-label="" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"></path></svg>
+</a>
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../..">
+        🏡 首页
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../../">
+        💻 计算机科学
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="即昼" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="即昼">
+<img alt="logo" src="../../../assets/logo.png"/>
+</a>
+    即昼
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../..">🏡 首页</a>
+<label for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+          🏡 首页
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../home/tags/">
+        🔖 标签
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../">💻 计算机科学</a>
+<label for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          💻 计算机科学
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../">⌨️ 软件工程</a>
+<label for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+          ⌨️ 软件工程
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index md-nav__link--active">
+<a href="./">数据结构与算法</a>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_2_2_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_2">
+<span class="md-nav__icon md-icon"></span>
+          数据结构与算法
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">面向对象程序设计</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_3">
+<span class="md-nav__icon md-icon"></span>
+          面向对象程序设计
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">🤖 人工智能</a>
+<label for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+          🤖 人工智能
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
+          统计学习
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_2">
+<span class="md-nav__icon md-icon"></span>
+          统计学习
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/k%E8%BF%91%E9%82%BB%E6%B3%95/">
+        𝟏. k近邻法
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#c-基础知识">
+    C++ 基础知识
+  </a>
+<nav aria-label="C++ 基础知识" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#动态内存与释放">
+    动态内存与释放
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#template">
+    template
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#关键字修饰符">
+    关键字修饰符
+  </a>
+<nav aria-label="关键字修饰符" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#const">
+    const
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#static">
+    static
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#this">
+    *this
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#explicit-显式转换">
+    explicit 显式转换
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#宏定义">
+    宏定义
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#传递-引用">
+    传递 引用
+  </a>
+<nav aria-label="传递 引用" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#形参的值传递-指针传递-引用传递">
+    形参的值传递 指针传递 引用传递
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#左值-右值引用">
+    左值 右值引用
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#stdmove">
+    std::move
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#class--struct-封装">
+    Class &amp; Struct 封装
+  </a>
+<nav aria-label="Class &amp; Struct 封装" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#复制构造函数">
+    复制构造函数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#函数化">
+    函数化
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#struct-定义传入参数">
+    struct 定义传入参数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operator-重载运算符">
+    Operator 重载运算符
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#注释">
+    注释
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#standard-template-library">
+    Standard Template Library
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#复杂度">
+    复杂度
+  </a>
+<nav aria-label="复杂度" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#big-o">
+    big O
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#时间复杂度">
+    时间复杂度
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#主定理">
+    主定理
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vector--list--stack--queues">
+    Vector &amp; List &amp; Stack &amp; Queues
+  </a>
+<nav aria-label="Vector &amp; List &amp; Stack &amp; Queues" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#iterator">
+    iterator
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vector--list">
+    Vector &amp; List
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#stack--queue">
+    Stack &amp; Queue
+  </a>
+<nav aria-label="Stack &amp; Queue" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#stack-计算器">
+    Stack 计算器
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#树">
+    树
+  </a>
+<nav aria-label="树" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#二叉搜索树">
+    二叉搜索树
+  </a>
+<nav aria-label="二叉搜索树" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#构建">
+    构建
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#关于-struct-构造">
+    关于 struct 构造
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#关于-function-参数">
+    关于 function 参数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#时间分析">
+    时间分析
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#balance-树">
+    Balance 树
+  </a>
+<nav aria-label="Balance 树" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#avl-树">
+    AVL 树
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#splay-树">
+    Splay 树*
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#traversals">
+    Traversals
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#b-树">
+    B 树*
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sets--maps">
+    Sets &amp; Maps
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#哈希">
+    哈希
+  </a>
+<nav aria-label="哈希" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#分析">
+    分析
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#开放寻址法">
+    开放寻址法
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#再散列">
+    再散列
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#可扩散列">
+    可扩散列*
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#priority-queues--heaps">
+    Priority Queues &amp; Heaps
+  </a>
+<nav aria-label="Priority Queues &amp; Heaps" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#二叉堆">
+    二叉堆
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#applications-of-priority-queues">
+    Applications of Priority Queues
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#排序">
+    排序
+  </a>
+<nav aria-label="排序" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#插入排序">
+    插入排序
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#快排">
+    快排
+  </a>
+<nav aria-label="快排" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pivot策略">
+    Pivot策略
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#选择的线性期望时间算法">
+    选择的线性期望时间算法
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#线性时间排序-bucket-sort-and-radix-sort-复杂度分析">
+    线性时间排序: Bucket Sort and Radix Sort 复杂度分析
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#计基数排序非比较算法">
+    计（基）数排序——非比较算法
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#归并排序堆排序">
+    归并排序/堆排序
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#图论">
+    图论
+  </a>
+<nav aria-label="图论" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#表示">
+    表示
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#拓扑排序">
+    拓扑排序
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dijkstras">
+    Dijkstras
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#最坏可能">
+    最坏可能
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#可对负边权使用的算法">
+    可对负边权使用的算法
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#最小生成树">
+    最小生成树
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#深度优先-广度优先">
+    深度优先 广度优先
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#算法设计补充">
+    算法设计补充
+  </a>
+<nav aria-label="算法设计补充" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#贪心算法">
+    贪心算法
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#分治算法-divide-and-conquer">
+    分治算法 Divide-and-Conquer
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dynamic-programming">
+    Dynamic Programming
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#回溯法">
+    回溯法
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="数据结构与算法">数据结构与算法<a class="headerlink" href="#数据结构与算法" title="跳转到此部分">·</a></h1>
+<!--more-->
+<h2 id="c-基础知识">C++ 基础知识<a class="headerlink" href="#c-基础知识" title="跳转到此部分">·</a></h2>
+<h3 id="动态内存与释放">动态内存与释放<a class="headerlink" href="#动态内存与释放" title="跳转到此部分">·</a></h3>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"> </span><span class="k">delete</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">Birds</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="kt">char</span><span class="p">[</span><span class="mi">256</span><span class="p">]}</span>
+</span></code></pre></div>
+<p>利用指针实现动态内存分配。同值对象指向相同address</p>
+<p>Shell命令查看内存泄漏状况<code>valgrind filename</code></p>
+<p>释放内存：及时delete变量。由于为指针，要防止指向新地址时原内存未被释放。</p>
+<h3 id="template">template<a class="headerlink" href="#template" title="跳转到此部分">·</a></h3>
+<p>编译时自动填充typename
+在类外撰写类成员函数时需要添加
+可指定T的具体类型</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">Array</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">FunctionName</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Array</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">_obj</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</span></code></pre></div>
+<h3 id="关键字修饰符">关键字修饰符<a class="headerlink" href="#关键字修饰符" title="跳转到此部分">·</a></h3>
+<h4 id="const">const<a class="headerlink" href="#const" title="跳转到此部分">·</a></h4>
+<p>对成员函数：修饰非静态数据，只读化。应尽可能将该成员函数声明为const 成员函数，除非成员函数需要修改数据成员。const可访问非常量数据，反之不可。指针数据可以被const 函数修改。
+<code>Class:: func() const {}</code></p>
+<p>对形参：指针传递，禁止修改指针指向地址内存数据；值传递不需要const保护。</p>
+<p><code>void copyMemory(const T* _s,T* _d,int _n);</code></p>
+<h4 id="static">static<a class="headerlink" href="#static" title="跳转到此部分">·</a></h4>
+<p>静态变量，延长生命周期又相较全局变量保留了一定的访问范围。需要一个数据对象为整个类而非某个对象服务,同时又力求不破坏类的封装性,即要求此成员隐藏在类的内部时使用。</p>
+<h4 id="this">*this<a class="headerlink" href="#this" title="跳转到此部分">·</a></h4>
+<p>指向obj自身的指针</p>
+<h4 id="explicit-显式转换">explicit 显式转换<a class="headerlink" href="#explicit-显式转换" title="跳转到此部分">·</a></h4>
+<p><code>explicit</code> 对单参数构造函数限制隐式转换
+防止编译器进行类型等方式的强制转换。</p>
+<h3 id="宏定义">宏定义<a class="headerlink" href="#宏定义" title="跳转到此部分">·</a></h3>
+<p>用于简化重复语句<code>#define TEMP template&lt;typename T&gt;</code></p>
+<p>编译处理</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="cp">#ifndef xxx</span>
+</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="cp">#define xxx</span>
+</span><span id="__span-2-3"><a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="cp">#else</span>
+</span><span id="__span-2-4"><a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="cp">#endif</span>
+</span></code></pre></div>
+<h3 id="传递-引用">传递 引用<a class="headerlink" href="#传递-引用" title="跳转到此部分">·</a></h3>
+<h4 id="形参的值传递-指针传递-引用传递">形参的值传递 指针传递 引用传递<a class="headerlink" href="#形参的值传递-指针传递-引用传递" title="跳转到此部分">·</a></h4>
+<p>默认为值传递，开辟新函数，储存实参数据；指针实质存在一层中介地址，引用传递直接对传入对象进行修改；</p>
+<p><code>*&amp;obj</code> 适用于struct对象，对其属性变量进行修改</p>
+<ol>
+<li><code>T* a</code> ： 传递实参指针地址，及最终指向数据地址，但可以利用*a修改地址内存数据</li>
+<li><code>T&amp; a</code> ：左值引用，实参的别名</li>
+</ol>
+<h4 id="左值-右值引用">左值 右值引用<a class="headerlink" href="#左值-右值引用" title="跳转到此部分">·</a></h4>
+<p>右值引用 <code>&amp;&amp;</code> ：防止传递给形参 <code>T&amp; a</code> 的是常量（此时函数无法修改a）</p>
+<p><strong>看能不能对表达式取地址，如果能，则为左值，否则为右值</strong></p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</span><span id="__span-3-3"><a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"> </span><span class="c1">// error.</span>
+</span><span id="__span-3-4"><a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="kt">int</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</span></code></pre></div>
+<p><strong>约定</strong> rhs：引用；lhs：赋值</p>
+<h3 id="stdmove">std::move<a class="headerlink" href="#stdmove" title="跳转到此部分">·</a></h3>
+<p>强制将左值转换为右值引用，如 <code>push_back</code> 避免开辟新内存</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">AvlNode</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Comparable</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ele</span><span class="p">,</span><span class="w"> </span><span class="n">AvlNode</span><span class="w"> </span><span class="o">*</span><span class="n">lt</span><span class="p">,</span><span class="w"> </span><span class="n">AvlNode</span><span class="w"> </span><span class="o">*</span><span class="n">rt</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">element</span><span class="p">{</span><span class="n">ele</span><span class="p">},</span><span class="w"> </span><span class="n">left</span><span class="p">{</span><span class="n">lt</span><span class="p">},</span><span class="w"> </span><span class="n">right</span><span class="p">{</span><span class="n">rt</span><span class="p">},</span><span class="w"> </span><span class="n">height</span><span class="p">{</span><span class="n">h</span><span class="p">}</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="__span-4-2"><a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="n">AvlNode</span><span class="p">(</span><span class="n">Comparable</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ele</span><span class="p">,</span><span class="w"> </span><span class="n">AvlNode</span><span class="w"> </span><span class="o">*</span><span class="n">lt</span><span class="p">,</span><span class="w"> </span><span class="n">AvlNode</span><span class="w"> </span><span class="o">*</span><span class="n">rt</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">element</span><span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">ele</span><span class="p">)},</span><span class="w"> </span><span class="n">left</span><span class="p">{</span><span class="n">lt</span><span class="p">},</span><span class="w"> </span><span class="n">right</span><span class="p">{</span><span class="n">rt</span><span class="p">},</span><span class="w"> </span><span class="n">height</span><span class="p">{</span><span class="n">h</span><span class="p">}</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="c1">//参数无地址，临时ele=参数</span>
+</span></code></pre></div>
+<h3 id="class--struct-封装">Class &amp; Struct 封装<a class="headerlink" href="#class--struct-封装" title="跳转到此部分">·</a></h3>
+<p>外部只提供相应功能的接口，不允许直接对底层对象进行修改。</p>
+<h4 id="复制构造函数">复制构造函数<a class="headerlink" href="#复制构造函数" title="跳转到此部分">·</a></h4>
+<p>将b中成员属性复制到c： <code>Birds c(b);</code>
+类中处理：定义拷贝函数；否则：缺省。
+需要开辟新的动态内存</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="n">Birds</span><span class="p">(</span><span class="n">Birds</span><span class="w"> </span><span class="n">_obj</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="n">name</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="p">[</span><span class="mi">256</span><span class="p">];</span><span class="w"> </span>
+</span><span id="__span-5-3"><a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="n">for循环迭代载入name</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">_obj</span><span class="p">.</span><span class="n">name</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span><span id="__span-5-4"><a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="函数化">函数化<a class="headerlink" href="#函数化" title="跳转到此部分">·</a></h4>
+<p>如复制构造函数中的copyMemory，便于多核并行运算。</p>
+<h4 id="struct-定义传入参数">struct 定义传入参数<a class="headerlink" href="#struct-定义传入参数" title="跳转到此部分">·</a></h4>
+<p>使得struct能够直接在定义时传入相应参数</p>
+<p><code>BinaryNode(const Comparable&amp; theElement, BinaryNode *lt, BinaryNode *rt): element(theElement),left(lt),right(rt) {}</code></p>
+<h4 id="operator-重载运算符">Operator 重载运算符<a class="headerlink" href="#operator-重载运算符" title="跳转到此部分">·</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>const Array&amp; operator=(const Array&amp; _obj)
+</span></code></pre></div>
+<h3 id="注释">注释<a class="headerlink" href="#注释" title="跳转到此部分">·</a></h3>
+<p>doxymacs/doxygen格式的注释：
+可以通过命令提取所有相应注释以html方式直观显示。</p>
+<h3 id="standard-template-library">Standard Template Library<a class="headerlink" href="#standard-template-library" title="跳转到此部分">·</a></h3>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-7-1"><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="c1">// get random number.</span>
+</span><span id="__span-7-2"><a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="n">srand</span><span class="p">((</span><span class="kt">unsigned</span><span class="p">)</span><span class="n">time</span><span class="p">(</span><span class="k">nullptr</span><span class="p">));</span><span class="w"> </span><span class="c1">// 随机种子</span>
+</span><span id="__span-7-3"><a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="n">a</span><span class="o">=</span><span class="n">rand</span><span class="p">()</span><span class="o">%</span><span class="mi">10</span><span class="p">;</span>
+</span></code></pre></div>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-8-1"><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span>
+</span><span id="__span-8-2"><a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="n">abs</span><span class="p">();</span><span class="n">min</span><span class="p">();</span><span class="n">max</span><span class="p">();</span><span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">);</span>
+</span><span id="__span-8-3"><a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
+</span><span id="__span-8-4"><a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="n">sqrt</span><span class="p">();</span><span class="n">sin</span><span class="p">();</span><span class="n">cos</span><span class="p">();</span><span class="n">tan</span><span class="p">();</span><span class="n">pow</span><span class="p">();</span>
+</span><span id="__span-8-5"><a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ctime&gt;</span>
+</span><span id="__span-8-6"><a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="kt">clock_t</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clock</span><span class="p">();</span>
+</span></code></pre></div>
+<h2 id="复杂度">复杂度<a class="headerlink" href="#复杂度" title="跳转到此部分">·</a></h2>
+<h3 id="big-o">big O<a class="headerlink" href="#big-o" title="跳转到此部分">·</a></h3>
+<p><span class="arithmatex">\(1000N=O(N^2); (logN)^k=O(N);\)</span></p>
+<p><span class="arithmatex">\(1 &lt; logN &lt; N &lt; NlogN &lt; N^2\)</span></p>
+<h3 id="时间复杂度">时间复杂度<a class="headerlink" href="#时间复杂度" title="跳转到此部分">·</a></h3>
+<ul>
+<li>for循环｜内语句*迭代次数；嵌套循环</li>
+<li>顺序语句｜求和，取Max；判定语句</li>
+<li>NlogN|最大子序列问题 一次N遍历&amp;一次二分查找</li>
+<li>logN｜二分搜索，欧几里得</li>
+</ul>
+<h2 id="主定理">主定理<a class="headerlink" href="#主定理" title="跳转到此部分">·</a></h2>
+<p><strong>归纳法证明：</strong> </p>
+<p>（例）</p>
+<p><strong>一般性证明：</strong></p>
+<p>构造树，<span class="arithmatex">\(\text{depth}=log(b,n)，\text{widget}=a^{(log(b,n))}=n^{(log(b,a))}\)</span></p>
+<p>{{&lt; admonition note "实例：二分查找" true &gt;}}
+<span class="arithmatex">\(T(n) = T(n/2) + O(1)\)</span></p>
+<p><span class="arithmatex">\(T(n/2) = T(n/4) + O(1)\)</span></p>
+<p><span class="arithmatex">\(...\)</span></p>
+<p><span class="arithmatex">\(T(2) = T(1) + O(1)\)</span></p>
+<p><span class="arithmatex">\(T(1) = O(1)\)</span></p>
+<p><span class="arithmatex">\(a=1,b=2,k=0\)</span> 代入得 <span class="arithmatex">\(O(logN)\)</span>;
+{{&lt; /admonition &gt;}}</p>
+<p>另可直接证，由于为<span class="arithmatex">\(1/2,1/4...1/n\)</span>, 尾项<span class="arithmatex">\(2^k\)</span>项为<span class="arithmatex">\(n\)</span>，故共<span class="arithmatex">\(logn\)</span>项，<span class="arithmatex">\(<span class="arithmatex">\(T(n)=logn\times o(1)=logn\)</span>\)</span></p>
+<h2 id="vector--list--stack--queues">Vector &amp; List &amp; Stack &amp; Queues<a class="headerlink" href="#vector--list--stack--queues" title="跳转到此部分">·</a></h2>
+<h3 id="iterator">iterator<a class="headerlink" href="#iterator" title="跳转到此部分">·</a></h3>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-9-1"><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">iterator</span><span class="w"> </span><span class="n">a</span><span class="o">=</span><span class="n">A</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+</span><span id="__span-9-2"><a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+</span></code></pre></div>
+<h3 id="vector--list">Vector &amp; List<a class="headerlink" href="#vector--list" title="跳转到此部分">·</a></h3>
+<ul>
+<li>Array | 经典数组</li>
+<li>Vector | 批量分配内存的数组，空间不够时再申请新的内存；模板化<code>&lt;T&gt;</code>；允许拷贝赋值</li>
+<li>List | 链表 Single/Double-Linked-List <strong>双链表</strong> 表头、尾、哨兵结点</li>
+</ul>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-10-1"><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">//10个初值为1的元素</span>
+</span><span id="__span-10-2"><a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">b</span><span class="p">.</span><span class="n">begin</span><span class="o">+</span><span class="mi">3</span><span class="p">);</span>
+</span><span id="__span-10-3"><a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a>
+</span><span id="__span-10-4"><a href="#__codelineno-10-4" id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="c1">//共有</span>
+</span><span id="__span-10-5"><a href="#__codelineno-10-5" id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="n">a</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span><span class="n">a</span><span class="p">.</span><span class="n">empty</span><span class="p">();</span>
+</span><span id="__span-10-6"><a href="#__codelineno-10-6" id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="n">a</span><span class="p">.</span><span class="n">front</span><span class="p">();</span><span class="n">a</span><span class="p">.</span><span class="n">back</span><span class="p">();</span>
+</span><span id="__span-10-7"><a href="#__codelineno-10-7" id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="n">a</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+</span><span id="__span-10-8"><a href="#__codelineno-10-8" id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="n">a</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span><span class="c1">//现有元素数目调整,多删少补,未给定参数2则随机</span>
+</span><span id="__span-10-9"><a href="#__codelineno-10-9" id="__codelineno-10-9" name="__codelineno-10-9"></a>
+</span><span id="__span-10-10"><a href="#__codelineno-10-10" id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="c1">// Vector</span>
+</span><span id="__span-10-11"><a href="#__codelineno-10-11" id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="n">a</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
+</span><span id="__span-10-12"><a href="#__codelineno-10-12" id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="n">a</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span><span class="n">a</span><span class="p">.</span><span class="n">swap</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
+</span><span id="__span-10-13"><a href="#__codelineno-10-13" id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="n">a</span><span class="p">.</span><span class="n">reserve</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="c1">//容量</span>
+</span><span id="__span-10-14"><a href="#__codelineno-10-14" id="__codelineno-10-14" name="__codelineno-10-14"></a>
+</span><span id="__span-10-15"><a href="#__codelineno-10-15" id="__codelineno-10-15" name="__codelineno-10-15"></a><span class="c1">// List</span>
+</span><span id="__span-10-16"><a href="#__codelineno-10-16" id="__codelineno-10-16" name="__codelineno-10-16"></a><span class="n">a</span><span class="p">.</span><span class="n">push_front</span><span class="p">(</span><span class="n">val</span><span class="p">);</span><span class="n">a</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">single_val</span><span class="p">);</span>
+</span><span id="__span-10-17"><a href="#__codelineno-10-17" id="__codelineno-10-17" name="__codelineno-10-17"></a><span class="n">a</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="n">val</span><span class="p">);</span><span class="n">a</span><span class="p">.</span><span class="n">remove_if</span><span class="p">(</span><span class="n">condition</span><span class="p">);</span><span class="n">a</span><span class="p">.</span><span class="n">unique</span><span class="p">();</span><span class="c1">//去重</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>Access</th>
+<th>Insert</th>
+<th>Delete</th>
+<th>Search</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Array/Vector</td>
+<td>1</td>
+<td>n</td>
+<td>n</td>
+<td>n</td>
+</tr>
+<tr>
+<td>Single-linked-List</td>
+<td>n</td>
+<td>1</td>
+<td>1</td>
+<td>n</td>
+</tr>
+<tr>
+<td>Double-linked-List</td>
+<td>n</td>
+<td>1</td>
+<td>1</td>
+<td>n</td>
+</tr>
+</tbody>
+</table>
+<h3 id="stack--queue">Stack &amp; Queue<a class="headerlink" href="#stack--queue" title="跳转到此部分">·</a></h3>
+<p><code>pop() push() size() swap() empty();</code></p>
+<ul>
+<li>Stack: LIFO <code>top();</code> </li>
+<li>Queue: FIFO <code>front() back();</code></li>
+</ul>
+<h4 id="stack-计算器">Stack 计算器<a class="headerlink" href="#stack-计算器" title="跳转到此部分">·</a></h4>
+<ul>
+<li>前缀/后缀。</li>
+<li><strong>中缀转后缀：</strong><code>A+B*(C-D)-E/F</code>转为<code>ABCD−∗+EF/−</code></li>
+</ul>
+<p>优先级设置 <code>‘*’ = ‘/’ &gt; ‘+’ = ‘-’ &gt;</code>
+- style1: <code>‘(’</code> 优先级最高，如直接读入；推入操作符时不弹
+- style2: <code>‘(’</code> 优先级最低，强制直接读入
+- 数字直接放到[输出列]，右括号直接弹到左括号止；
+- 操作符：栈弹出直到遇到比自己优先级低的操作符再入栈。
+- 计算：顺序读取，数字入栈，符号弹出两数字运算，结果入栈。</p>
+<h2 id="树">树<a class="headerlink" href="#树" title="跳转到此部分">·</a></h2>
+<p>Binary Tree 二叉树平均深度 <span class="arithmatex">\(O(\sqrt{N})\)</span> ，表达式树应用；</p>
+<h3 id="二叉搜索树">二叉搜索树<a class="headerlink" href="#二叉搜索树" title="跳转到此部分">·</a></h3>
+<p>左小右大；平均深度 <span class="arithmatex">\(O(logN)\)</span> ，最坏深度 <span class="arithmatex">\(O(N-1)\)</span>.</p>
+<h4 id="构建">构建<a class="headerlink" href="#构建" title="跳转到此部分">·</a></h4>
+<ul>
+<li><code>contains</code>｜<code>findMin(Max)</code>｜<code>insert</code>｜<code>～</code> </li>
+<li><code>makeEmpty</code> 递归</li>
+<li><code>copy</code> | clone，递归 <code>return new node</code>; </li>
+<li>重载运算符：<code>this!=&amp;rhs</code> 则 <code>makeEmpty</code> 再 <code>clone rhs.root</code> ，最终 <code>return *this</code></li>
+<li><code>remove</code> | <code>(*&amp;t)t</code> 为结点地址；空, <code>return</code>; <code>t&lt;&gt;x</code> 判断; <code>t=x</code>.</li>
+<li>双子: <code>t-&gt;ele=findmax(t-&gt;right)-&gt;ele</code> , <code>remove(t-&gt;ele;t-&gt;right); // 右子找min代入t,删除该min</code></li>
+<li>单子/无子: <code>T*oldNode=t</code> ,另引入的参数 <code>t=t-&gt;left/right</code> 相当于改结点地址为 t 左/右子，再删 <code>oldNode</code> 即删了原结点.</li>
+</ul>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-11-1"><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="c1">// findmin: 递归或while 注意空树直接返回nullptr</span>
+</span><span id="__span-11-2"><a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="n">BinaryNode</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">findMin</span><span class="p">(</span><span class="w"> </span><span class="n">BinaryNode</span><span class="w"> </span><span class="o">*</span><span class="n">t</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-3"><a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-11-4"><a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+</span><span id="__span-11-5"><a href="#__codelineno-11-5" id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-11-6"><a href="#__codelineno-11-6" id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">t</span><span class="p">;</span>
+</span><span id="__span-11-7"><a href="#__codelineno-11-7" id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">findMin</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-11-8"><a href="#__codelineno-11-8" id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="p">}</span>
+</span><span id="__span-11-9"><a href="#__codelineno-11-9" id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="c1">// insert</span>
+</span><span id="__span-11-10"><a href="#__codelineno-11-10" id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="mf">1.</span><span class="k">if</span><span class="w"> </span><span class="n">t</span><span class="o">==</span><span class="k">nullptr</span><span class="o">:</span><span class="k">new</span><span class="w"> </span><span class="n">node</span><span class="p">{</span><span class="n">x</span><span class="p">,</span><span class="k">nullptr</span><span class="p">,</span><span class="k">nullptr</span><span class="p">};</span>
+</span><span id="__span-11-11"><a href="#__codelineno-11-11" id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="mf">2.</span><span class="k">else</span><span class="w"> </span><span class="n">compare</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">ele</span><span class="p">,</span><span class="n">递归</span>
+</span><span id="__span-11-12"><a href="#__codelineno-11-12" id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="mf">3.</span><span class="n">balance</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">update</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">height</span><span class="p">(</span><span class="n">max</span><span class="p">(</span><span class="n">subtree</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">).</span>
+</span></code></pre></div>
+<h4 id="关于-struct-构造">关于 struct 构造<a class="headerlink" href="#关于-struct-构造" title="跳转到此部分">·</a></h4>
+<ul>
+<li><code>BinaryNode</code> 置于 private；针对 <code>struct</code> 的操作也位于 private 部分</li>
+<li>外部操作 <span class="arithmatex">\(\rightarrow\)</span> public函数 <span class="arithmatex">\(\rightarrow\)</span> private函数</li>
+</ul>
+<h4 id="关于-function-参数">关于 function 参数<a class="headerlink" href="#关于-function-参数" title="跳转到此部分">·</a></h4>
+<p>对 <code>Struct BinaryNode</code>，由于其 <code>element</code> 为变量，<code>left/right</code> 为指针，fuction 引用时应采用 <code>BinaryNode * &amp; t</code> ，引用 Node 地址。</p>
+<h4 id="时间分析">时间分析<a class="headerlink" href="#时间分析" title="跳转到此部分">·</a></h4>
+<ul>
+<li>内部路径长｜所有结点的深度和</li>
+<li>
+<p>递推关系、秩，(average) <span class="arithmatex">\(<span class="arithmatex">\(D(N)=D(i)+D(N-i-1)+N-1 \Rightarrow O(NlogN)\)</span>\)</span></p>
+</li>
+<li>
+<p>任意结点预期深度 <span class="arithmatex">\(logN\)</span></p>
+</li>
+<li>交替 <code>insert/remove</code> <span class="arithmatex">\(O(N^2)\)</span> ，期望深度 <span class="arithmatex">\(O(\sqrt{N})\)</span></li>
+</ul>
+<h3 id="balance-树">Balance 树<a class="headerlink" href="#balance-树" title="跳转到此部分">·</a></h3>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-12-1"><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="c1">/// Height 处理</span>
+</span><span id="__span-12-2"><a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="c1">// Binary Tree</span>
+</span><span id="__span-12-3"><a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">height</span><span class="p">(</span><span class="w"> </span><span class="n">BinaryNode</span><span class="w"> </span><span class="o">*</span><span class="n">t</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-12-4"><a href="#__codelineno-12-4" id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-12-5"><a href="#__codelineno-12-5" id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+</span><span id="__span-12-6"><a href="#__codelineno-12-6" id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="w">  </span><span class="k">else</span>
+</span><span id="__span-12-7"><a href="#__codelineno-12-7" id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">height</span><span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">),</span><span class="w"> </span><span class="n">height</span><span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">));</span>
+</span><span id="__span-12-8"><a href="#__codelineno-12-8" id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="p">}</span>
+</span><span id="__span-12-9"><a href="#__codelineno-12-9" id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="c1">// AVL Tree: Struct AvlNode has added the val 'height'.</span>
+</span><span id="__span-12-10"><a href="#__codelineno-12-10" id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="kt">int</span><span class="w"> </span><span class="nf">height</span><span class="p">(</span><span class="w"> </span><span class="n">AvlNode</span><span class="w"> </span><span class="o">*</span><span class="n">t</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-11"><a href="#__codelineno-12-11" id="__codelineno-12-11" name="__codelineno-12-11"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">-1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">height</span><span class="p">;</span>
+</span><span id="__span-12-12"><a href="#__codelineno-12-12" id="__codelineno-12-12" name="__codelineno-12-12"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="avl-树">AVL 树<a class="headerlink" href="#avl-树" title="跳转到此部分">·</a></h4>
+<p>每个结点的左子树和右子树高度最多差1（空树为-1）</p>
+<p><strong>Rotation的具体实现</strong></p>
+<table>
+<thead>
+<tr>
+<th>插入方式</th>
+<th>描述</th>
+<th>旋转方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LL</td>
+<td>在a的<strong>左子树</strong>根节点的<strong>左子树</strong>上插入节点而破坏平衡</td>
+<td>右旋转</td>
+</tr>
+<tr>
+<td>RR</td>
+<td>在a的<strong>右子树</strong>根节点的<strong>右子树</strong>上插入节点而破坏平衡</td>
+<td>左旋转</td>
+</tr>
+<tr>
+<td>LR</td>
+<td>在a的<strong>左子树</strong>根节点的<strong>右子树</strong>上插入节点而破坏平衡</td>
+<td>先左旋后右旋</td>
+</tr>
+<tr>
+<td>RL</td>
+<td>在a的<strong>右子树</strong>根节点的<strong>左子树</strong>上插入节点而破坏平衡</td>
+<td>先右旋后左旋</td>
+</tr>
+</tbody>
+</table>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-13-1"><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="c1">// insert. 伪代码</span>
+</span><span id="__span-13-2"><a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="n">x</span><span class="o">&lt;</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">ele</span><span class="o">:</span><span class="n">左插入</span><span class="err">，</span><span class="n">insert</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">),</span><span class="n">此时判定</span>
+</span><span id="__span-13-3"><a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="n">condition</span><span class="o">:</span><span class="n">height</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">left</span><span class="o">-</span><span class="n">right</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-13-4"><a href="#__codelineno-13-4" id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="w">    </span><span class="n">then</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">x</span><span class="o">&lt;</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">left</span><span class="o">-&gt;</span><span class="n">ele</span><span class="w"> </span><span class="n">即LL</span><span class="err">，</span><span class="n">对t调用右旋</span><span class="w"> </span><span class="c1">// 其余同理</span>
+</span><span id="__span-13-5"><a href="#__codelineno-13-5" id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="c1">// right rotation. (for LL-insert style)</span>
+</span><span id="__span-13-6"><a href="#__codelineno-13-6" id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="kt">void</span><span class="w"> </span><span class="n">rotateWithLeftChild</span><span class="p">(</span><span class="w"> </span><span class="n">AvlNode</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">k2</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-7"><a href="#__codelineno-13-7" id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="w">  </span><span class="n">AvlNode</span><span class="w"> </span><span class="o">*</span><span class="n">k1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k2</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">;</span>
+</span><span id="__span-13-8"><a href="#__codelineno-13-8" id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="w">  </span><span class="n">k2</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k1</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">;</span>
+</span><span id="__span-13-9"><a href="#__codelineno-13-9" id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="w">  </span><span class="n">k1</span><span class="o">-&gt;</span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k2</span><span class="p">;</span>
+</span><span id="__span-13-10"><a href="#__codelineno-13-10" id="__codelineno-13-10" name="__codelineno-13-10"></a><span class="w">  </span><span class="c1">// after rotation , update the height.</span>
+</span><span id="__span-13-11"><a href="#__codelineno-13-11" id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="w">  </span><span class="n">k2</span><span class="o">-&gt;</span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="w"> </span><span class="n">height</span><span class="p">(</span><span class="w"> </span><span class="n">k2</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="p">),</span><span class="w"> </span><span class="n">height</span><span class="p">(</span><span class="w"> </span><span class="n">k2</span><span class="o">-&gt;</span><span class="n">right</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-13-12"><a href="#__codelineno-13-12" id="__codelineno-13-12" name="__codelineno-13-12"></a><span class="w">  </span><span class="n">k1</span><span class="o">-&gt;</span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="w"> </span><span class="n">height</span><span class="p">(</span><span class="w"> </span><span class="n">k1</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="p">),</span><span class="w"> </span><span class="n">k2</span><span class="o">-&gt;</span><span class="n">height</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-13-13"><a href="#__codelineno-13-13" id="__codelineno-13-13" name="__codelineno-13-13"></a><span class="w">  </span><span class="n">k2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k1</span><span class="p">;</span>
+</span><span id="__span-13-14"><a href="#__codelineno-13-14" id="__codelineno-13-14" name="__codelineno-13-14"></a><span class="p">}</span>
+</span><span id="__span-13-15"><a href="#__codelineno-13-15" id="__codelineno-13-15" name="__codelineno-13-15"></a><span class="c1">// LR-insert.</span>
+</span><span id="__span-13-16"><a href="#__codelineno-13-16" id="__codelineno-13-16" name="__codelineno-13-16"></a><span class="kt">void</span><span class="w"> </span><span class="n">doubleWithLeftChild</span><span class="p">(</span><span class="w"> </span><span class="n">AvlNode</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">k3</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-17"><a href="#__codelineno-13-17" id="__codelineno-13-17" name="__codelineno-13-17"></a><span class="w">  </span><span class="n">rotateWithRightChild</span><span class="p">(</span><span class="w"> </span><span class="n">k3</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-13-18"><a href="#__codelineno-13-18" id="__codelineno-13-18" name="__codelineno-13-18"></a><span class="w">  </span><span class="n">rotateWithLeftChild</span><span class="p">(</span><span class="w"> </span><span class="n">k3</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-13-19"><a href="#__codelineno-13-19" id="__codelineno-13-19" name="__codelineno-13-19"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><strong>时间复杂度分析</strong></p>
+<ul>
+<li>计算高度O(logN)；</li>
+<li>保证查询O(logN)避免Binary Tree最坏的N；</li>
+<li>但由于旋转存在，操作效率低，特别是remove时可能需要一直旋转到根；</li>
+<li>额外封装，繁琐。</li>
+</ul>
+<p><em>另一种写法：独立的balance操作</em></p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-14-1"><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="c1">// at the end of each insert or remove operation, you need to do "balance(t)"</span>
+</span><span id="__span-14-2"><a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ALLOWED_IMBALANCE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-14-3"><a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">balance</span><span class="p">(</span><span class="w"> </span><span class="n">AvlNode</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-14-4"><a href="#__codelineno-14-4" id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-14-5"><a href="#__codelineno-14-5" id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="w">    </span><span class="k">return</span><span class="p">;</span>
+</span><span id="__span-14-6"><a href="#__codelineno-14-6" id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">height</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">height</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">right</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">ALLOWED_IMBALANCE</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-14-7"><a href="#__codelineno-14-7" id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">height</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">left</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">height</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">left</span><span class="o">-&gt;</span><span class="n">right</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-14-8"><a href="#__codelineno-14-8" id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="w">      </span><span class="n">rotateWithLeftChild</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-14-9"><a href="#__codelineno-14-9" id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span>
+</span><span id="__span-14-10"><a href="#__codelineno-14-10" id="__codelineno-14-10" name="__codelineno-14-10"></a><span class="w">      </span><span class="n">doubleWithLeftChild</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-14-11"><a href="#__codelineno-14-11" id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="w">  </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">height</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">right</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">height</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">ALLOWED_IMBALANCE</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-14-12"><a href="#__codelineno-14-12" id="__codelineno-14-12" name="__codelineno-14-12"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">height</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">right</span><span class="o">-&gt;</span><span class="n">right</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">height</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">right</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-14-13"><a href="#__codelineno-14-13" id="__codelineno-14-13" name="__codelineno-14-13"></a><span class="w">      </span><span class="n">rotateWithRightChild</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-14-14"><a href="#__codelineno-14-14" id="__codelineno-14-14" name="__codelineno-14-14"></a><span class="w">    </span><span class="k">else</span>
+</span><span id="__span-14-15"><a href="#__codelineno-14-15" id="__codelineno-14-15" name="__codelineno-14-15"></a><span class="w">      </span><span class="n">doubleWithRightChild</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-14-16"><a href="#__codelineno-14-16" id="__codelineno-14-16" name="__codelineno-14-16"></a><span class="w">  </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="w"> </span><span class="n">height</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="p">),</span><span class="w"> </span><span class="n">height</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">right</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-14-17"><a href="#__codelineno-14-17" id="__codelineno-14-17" name="__codelineno-14-17"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="splay-树">Splay 树*<a class="headerlink" href="#splay-树" title="跳转到此部分">·</a></h4>
+<p>保证从空树开始任意连续M次操作最多花费 <span class="arithmatex">\(O(MlogN)\)</span> 的时间</p>
+<h3 id="traversals">Traversals<a class="headerlink" href="#traversals" title="跳转到此部分">·</a></h3>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-15-1"><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="c1">// 前序</span>
+</span><span id="__span-15-2"><a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="n">文件路径展开</span>
+</span><span id="__span-15-3"><a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="c1">// 中序 O(N)</span>
+</span><span id="__span-15-4"><a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="nf">if</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">nullptr</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-15-5"><a href="#__codelineno-15-5" id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="w">    </span><span class="n">printTree</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-15-6"><a href="#__codelineno-15-6" id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="w">    </span><span class="n">out</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">element</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-15-7"><a href="#__codelineno-15-7" id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="w">    </span><span class="n">printTree</span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-15-8"><a href="#__codelineno-15-8" id="__codelineno-15-8" name="__codelineno-15-8"></a><span class="p">}</span>
+</span><span id="__span-15-9"><a href="#__codelineno-15-9" id="__codelineno-15-9" name="__codelineno-15-9"></a><span class="c1">// 后序 O(N)</span>
+</span><span id="__span-15-10"><a href="#__codelineno-15-10" id="__codelineno-15-10" name="__codelineno-15-10"></a><span class="n">高度计算</span>
+</span><span id="__span-15-11"><a href="#__codelineno-15-11" id="__codelineno-15-11" name="__codelineno-15-11"></a><span class="c1">// 层序</span>
+</span><span id="__span-15-12"><a href="#__codelineno-15-12" id="__codelineno-15-12" name="__codelineno-15-12"></a><span class="k">using</span><span class="w"> </span><span class="o">&lt;</span><span class="n">queue</span><span class="o">&gt;</span>
+</span></code></pre></div>
+<h3 id="b-树">B 树*<a class="headerlink" href="#b-树" title="跳转到此部分">·</a></h3>
+<h3 id="sets--maps">Sets &amp; Maps<a class="headerlink" href="#sets--maps" title="跳转到此部分">·</a></h3>
+<ul>
+<li>Sets｜排序、去重</li>
+</ul>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-16-1"><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+</span><span id="__span-16-2"><a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="n">a</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">val</span><span class="p">);</span><span class="c1">//logN</span>
+</span><span id="__span-16-3"><a href="#__codelineno-16-3" id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="n">a</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">val</span><span class="p">);</span><span class="n">a</span><span class="p">.</span><span class="n">swap</span><span class="p">(</span><span class="n">b</span><span class="p">);</span><span class="n">a</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+</span></code></pre></div>
+<ul>
+<li>Maps｜key-value(&gt;=1)</li>
+</ul>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-17-1"><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+</span><span id="__span-17-2"><a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="c1">// key:b-&gt;first; value:b-&gt;second....</span>
+</span></code></pre></div>
+<h2 id="哈希">哈希<a class="headerlink" href="#哈希" title="跳转到此部分">·</a></h2>
+<ul>
+<li>散列表</li>
+<li><code>insert</code> / <code>search</code> / <code>delete</code></li>
+<li>average:O(1)</li>
+<li>Key -&gt; Table</li>
+<li>素数</li>
+<li>TableSize</li>
+<li>collision</li>
+</ul>
+<h3 id="分析">分析<a class="headerlink" href="#分析" title="跳转到此部分">·</a></h3>
+<p><strong>负数补偿？</strong></p>
+<ul>
+<li>value&lt;0，then+tableSize</li>
+</ul>
+<p><strong>均匀分配键：</strong></p>
+<ul>
+<li>单元数目有限，键数实际上无穷</li>
+<li>习惯：0～tableSize-1</li>
+<li>装填因子</li>
+<li>分离链接法（缺点：内存分配耗时）</li>
+<li>除了链表，也可用二叉树/新散列表</li>
+</ul>
+<h3 id="开放寻址法">开放寻址法<a class="headerlink" href="#开放寻址法" title="跳转到此部分">·</a></h3>
+<ul>
+<li>冲突解决函数，<span class="arithmatex">\(\lambda&lt;0.5\)</span> 聚集效应, <span class="arithmatex">\(f(i)\)</span> 为冲突点与探查点的距离</li>
+<li>线性探测: <span class="arithmatex">\(f(i)=i\)</span> ；一次聚集-占据单元形成区块</li>
+<li>
+<p>平方探测: <span class="arithmatex">\(f(i)=i^2\)</span> 二次聚集</p>
+<p><em>保证表的大小是素数，否则表被填满一半就找不到空单元了</em></p>
+</li>
+<li>
+<p>双散列:f(i)=i*hash(x),结果不可以为0；example，hash(x)=R-(xmodR)</p>
+</li>
+</ul>
+<h3 id="再散列">再散列<a class="headerlink" href="#再散列" title="跳转到此部分">·</a></h3>
+<ul>
+<li><span class="arithmatex">\(O(N)\)</span></li>
+<li>一半/插满的策略</li>
+<li>途中策略：某一装填因子</li>
+</ul>
+<h3 id="可扩散列">可扩散列*<a class="headerlink" href="#可扩散列" title="跳转到此部分">·</a></h3>
+<h2 id="priority-queues--heaps">Priority Queues &amp; Heaps<a class="headerlink" href="#priority-queues--heaps" title="跳转到此部分">·</a></h2>
+<h3 id="二叉堆">二叉堆<a class="headerlink" href="#二叉堆" title="跳转到此部分">·</a></h3>
+<ul>
+<li>完全二叉树</li>
+<li>最小堆、最大堆</li>
+<li>数组存储 <span class="arithmatex">\(i,2i,2i+1\)</span></li>
+<li>查找 <span class="arithmatex">\(O(N)\)</span></li>
+<li>堆序性质</li>
+</ul>
+<p><strong>为何选用Heap？</strong>
+- Min/Max: <span class="arithmatex">\(O(1)\)</span></p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-18-1"><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Comparable</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-18-2"><a href="#__codelineno-18-2" id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="w">  </span><span class="c1">// check size.</span>
+</span><span id="__span-18-3"><a href="#__codelineno-18-3" id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">currentSize</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">array</span><span class="p">.</span><span class="n">size</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-18-4"><a href="#__codelineno-18-4" id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="w">    </span><span class="n">array</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="w"> </span><span class="n">array</span><span class="p">.</span><span class="n">size</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-18-5"><a href="#__codelineno-18-5" id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="w">  </span><span class="c1">// Percolate up </span>
+</span><span id="__span-18-6"><a href="#__codelineno-18-6" id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">hole</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">++</span><span class="n">currentSize</span><span class="p">;</span>
+</span><span id="__span-18-7"><a href="#__codelineno-18-7" id="__codelineno-18-7" name="__codelineno-18-7"></a><span class="w">  </span><span class="n">Comparable</span><span class="w"> </span><span class="n">copy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+</span><span id="__span-18-8"><a href="#__codelineno-18-8" id="__codelineno-18-8" name="__codelineno-18-8"></a><span class="w">  </span><span class="n">array</span><span class="p">[</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="w"> </span><span class="n">copy</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-18-9"><a href="#__codelineno-18-9" id="__codelineno-18-9" name="__codelineno-18-9"></a><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="w"> </span><span class="n">hole</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">];</span><span class="w"> </span><span class="n">hole</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-18-10"><a href="#__codelineno-18-10" id="__codelineno-18-10" name="__codelineno-18-10"></a><span class="w">    </span><span class="n">array</span><span class="p">[</span><span class="w"> </span><span class="n">hole</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="w"> </span><span class="n">hole</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="c1">// 规避大量交换</span>
+</span><span id="__span-18-11"><a href="#__codelineno-18-11" id="__codelineno-18-11" name="__codelineno-18-11"></a><span class="w">  </span><span class="n">array</span><span class="p">[</span><span class="w"> </span><span class="n">hole</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-18-12"><a href="#__codelineno-18-12" id="__codelineno-18-12" name="__codelineno-18-12"></a><span class="p">}</span><span class="w"> </span>
+</span></code></pre></div>
+<h3 id="applications-of-priority-queues">Applications of Priority Queues<a class="headerlink" href="#applications-of-priority-queues" title="跳转到此部分">·</a></h3>
+<h2 id="排序">排序<a class="headerlink" href="#排序" title="跳转到此部分">·</a></h2>
+<h3 id="插入排序">插入排序<a class="headerlink" href="#插入排序" title="跳转到此部分">·</a></h3>
+<h3 id="快排">快排<a class="headerlink" href="#快排" title="跳转到此部分">·</a></h3>
+<h4 id="pivot策略">Pivot策略<a class="headerlink" href="#pivot策略" title="跳转到此部分">·</a></h4>
+<p><strong>最好/坏可能性</strong></p>
+<ul>
+<li>随机选择待排序序列中的一个数字作为划分字问题的标准，划分是否平均影响算法复杂度</li>
+<li>每次问题规模减半，<span class="arithmatex">\(a=2，b=2，d=1\)</span></li>
+<li>复杂度为 <span class="arithmatex">\(n^2 log(n)\)</span></li>
+<li>最差情况下，复杂度为 <span class="arithmatex">\(O(n^2)\)</span></li>
+</ul>
+<h4 id="选择的线性期望时间算法">选择的线性期望时间算法<a class="headerlink" href="#选择的线性期望时间算法" title="跳转到此部分">·</a></h4>
+<h3 id="线性时间排序-bucket-sort-and-radix-sort-复杂度分析">线性时间排序: Bucket Sort and Radix Sort 复杂度分析<a class="headerlink" href="#线性时间排序-bucket-sort-and-radix-sort-复杂度分析" title="跳转到此部分">·</a></h3>
+<h3 id="计基数排序非比较算法">计（基）数排序——非比较算法<a class="headerlink" href="#计基数排序非比较算法" title="跳转到此部分">·</a></h3>
+<ul>
+<li>对于待排序的整数序列，从最低位到最高位每次按照相应的位排序一次</li>
+<li>每次递归问题规模变为原来的1/10，但需要求解10个子问题，额外运算为 <span class="arithmatex">\(O(n)\)</span> 的，<span class="arithmatex">\(a=10，b=10，d=1\)</span></li>
+<li>复杂度为 <span class="arithmatex">\(n^1 log(n) = nlog(n)\)</span> ，近似为 <span class="arithmatex">\(O(kN)\)</span> ，k为整数的位数</li>
+</ul>
+<h3 id="归并排序堆排序">归并排序/堆排序<a class="headerlink" href="#归并排序堆排序" title="跳转到此部分">·</a></h3>
+<p>归并排序
+- 数据列均分为两部分，分别排序，之后以 <span class="arithmatex">\(O(n)\)</span> 的复杂度进行合并，空间复杂度 <span class="arithmatex">\(O(n)\)</span>
+- 每次问题规模减半，<span class="arithmatex">\(a=2，b=2，d=1\)</span>
+- 复杂度为 <span class="arithmatex">\(nlog(n)\)</span></p>
+<h2 id="图论">图论<a class="headerlink" href="#图论" title="跳转到此部分">·</a></h2>
+<ul>
+<li>G[graph] -&gt; V[vertex]</li>
+<li>E[edge(arc)], path</li>
+<li>digraph 有向</li>
+<li>Weight&amp;cost 权/值</li>
+<li>Adjacent 邻接</li>
+<li>cycle 回路：满足 <span class="arithmatex">\(w1=wN\)</span> , length&gt;=1</li>
+<li>loop 环：回到自身，length=0</li>
+<li>Simple path 简单路径</li>
+<li>强/弱连通、基础图/完全图</li>
+</ul>
+<h3 id="表示">表示<a class="headerlink" href="#表示" title="跳转到此部分">·</a></h3>
+<ul>
+<li>Adjacent Matrix：dense <code>A[u][v]</code></li>
+<li>Adjacent List：sparse $O(|E|+|V|) $</li>
+</ul>
+<h3 id="拓扑排序">拓扑排序<a class="headerlink" href="#拓扑排序" title="跳转到此部分">·</a></h3>
+<p><code>find indegree=0 v1 
+-&gt; delete v1, neighbors indegree-1 
+-&gt; find indegree=0 v2
+...</code></p>
+<ul>
+<li><span class="arithmatex">\(O(V^2)\)</span> using <code>&lt;Queue&gt;</code></li>
+</ul>
+<h3 id="dijkstras">Dijkstras<a class="headerlink" href="#dijkstras" title="跳转到此部分">·</a></h3>
+<h3 id="最坏可能">最坏可能<a class="headerlink" href="#最坏可能" title="跳转到此部分">·</a></h3>
+<h3 id="可对负边权使用的算法">可对负边权使用的算法<a class="headerlink" href="#可对负边权使用的算法" title="跳转到此部分">·</a></h3>
+<h3 id="最小生成树">最小生成树<a class="headerlink" href="#最小生成树" title="跳转到此部分">·</a></h3>
+<ul>
+<li>如何扩张？（Ch10）</li>
+</ul>
+<h3 id="深度优先-广度优先">深度优先 广度优先<a class="headerlink" href="#深度优先-广度优先" title="跳转到此部分">·</a></h3>
+<h2 id="算法设计补充">算法设计补充<a class="headerlink" href="#算法设计补充" title="跳转到此部分">·</a></h2>
+<h3 id="贪心算法">贪心算法<a class="headerlink" href="#贪心算法" title="跳转到此部分">·</a></h3>
+<ul>
+<li>ch10.1 分析复杂度</li>
+</ul>
+<h3 id="分治算法-divide-and-conquer">分治算法 Divide-and-Conquer<a class="headerlink" href="#分治算法-divide-and-conquer" title="跳转到此部分">·</a></h3>
+<ul>
+<li>分而治之，递归</li>
+</ul>
+<h3 id="dynamic-programming">Dynamic Programming<a class="headerlink" href="#dynamic-programming" title="跳转到此部分">·</a></h3>
+<ul>
+<li>ch10.3 与d-c的比较（自底向上&amp;自顶向下）</li>
+</ul>
+<h3 id="回溯法">回溯法<a class="headerlink" href="#回溯法" title="跳转到此部分">·</a></h3>
+</article>
+</div>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            回到页面顶部
+          </button>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: Index" class="md-footer__link md-footer__link--prev" href="../" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                上一页
+              </span>
+<div class="md-ellipsis">
+                Index
+              </div>
+</div>
+</a>
+<a aria-label="下一页: 面向对象程序设计" class="md-footer__link md-footer__link--next" href="../%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" rel="next">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                下一页
+              </span>
+<div class="md-ellipsis">
+                面向对象程序设计
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+<b>𝐴𝑙𝑤𝑎𝑦𝑠 𝑜𝑛 𝒕𝒉𝒆 𝒓𝒐𝒂𝒅.</b><br/>𝐒𝐩𝐚𝐫𝐤𝙻𝚊𝚗𝚍 © 2015-2024
+    </div>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://github.com/Ralvine" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+<a class="md-social__link" href="mailto:ralvine.yjy@hotmail.com" rel="noopener" target="_blank" title="">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l217.6 163.2c11.4 8.5 27 8.5 38.4 0l217.6-163.2c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48H48zM0 176v208c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V176L294.4 339.2a63.9 63.9 0 0 1-76.8 0L0 176z"></path></svg>
+</a>
+<a class="md-social__link" href="http://sparkland.ralvines.top/feed_rss_created.xml" rel="noopener" target="_blank" title="sparkland.ralvines.top">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 64c0-17.7 14.3-32 32-32 229.8 0 416 186.2 416 416 0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96 14.3 96 0 81.7 0 64zm0 352a64 64 0 1 1 128 0 64 64 0 1 1-128 0zm32-256c159.1 0 288 128.9 288 288 0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224-17.7 0-32-14.3-32-32s14.3-32 32-32z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.prune", "toc.follow", "content.code.annotate", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../../assets/javascripts/bundle.fac441b0.min.js"></script>
+<script src="../../../javascripts/mathjax.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "fade", "closeEffect": "fade", "slideEffect": "slide"});})</script></body>
+</html>

@@ -20,7 +20,7 @@
 
 
 [dir=ltr] .md-typeset ul li {
-    font-family: Noto Serif SC, Serif;
+    font-family: "Roboto Slab", Noto Serif SC, Serif;
 }
 .md-typeset .items-center-text h2 {
     font-size: 1.2rem;
@@ -209,7 +209,7 @@ del {
 
 .brief {
     font-size: .75rem;
-    font-family: Noto Serif SC;
+    font-family: "Roboto Slab", Noto Serif SC, serif;
 }
 
 .highlight .o, .highlight .ow {
@@ -386,7 +386,7 @@ del {
 
 
 .md-tag::before {
-    font-family: 'Noto Serif SC';
+    font-family: "Roboto Slab", 'Noto Serif SC', serif;
 }
 [dir=ltr] .md-typeset .headerlink {
     margin-left: 0.2rem;
@@ -585,7 +585,7 @@ a:hover {
     font-weight: 700;
     color:#fff;
     text-shadow: 0px 0px 20px rgba(0,0,0,0.7);
-    font-family: Noto Serif SC, serif;
+    font-family: "Roboto Slab", Noto Serif SC, serif;
     opacity: .7;
     transition: opacity 0.3s ease;
 }
@@ -744,7 +744,7 @@ a:hover {
 .wechat {
     text-align: center;
     align-items: center;
-    font-family: Noto Serif SC, Serif;
+    font-family: "Roboto Slab", Noto Serif SC, Serif;
     font-size: .5rem;
     opacity: .7;
     line-height: 1;

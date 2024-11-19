@@ -1,0 +1,943 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="明日巴陵道，秋山又几重。" name="description"/>
+<link href="https://sparkland.ralvines.top/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/k%E8%BF%91%E9%82%BB%E6%B3%95/" rel="canonical"/>
+<link href="../../" rel="prev"/>
+<link href="../../../../assets/logo.png" rel="icon"/>
+<meta content="mkdocs-1.4.3, mkdocs-material-9.1.9" name="generator"/>
+<title>𝟏. k近邻法 - 即昼</title>
+<link href="../../../../assets/stylesheets/main.85bb2934.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/palette.a6bdf11c.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Noto Serif SC";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../../css/timeline.css" rel="stylesheet"/>
+<link href="../../../../stylesheets/basic.css" rel="stylesheet"/>
+<link href="../../../../stylesheets/title.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="cyan" data-md-color-primary="white" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#k近邻法">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="即昼" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="即昼">
+<img alt="logo" src="../../../../assets/logo.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            即昼
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              𝟏. k近邻法
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="" class="md-option" data-md-color-accent="cyan" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="white" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"></path></svg>
+</label>
+<input aria-label="" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"></path></svg>
+</a>
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../..">
+        🏡 首页
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../../../">
+        💻 计算机科学
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="即昼" class="md-nav__button md-logo" data-md-component="logo" href="../../../.." title="即昼">
+<img alt="logo" src="../../../../assets/logo.png"/>
+</a>
+    即昼
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../..">🏡 首页</a>
+<label for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+          🏡 首页
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../home/tags/">
+        🔖 标签
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../">💻 计算机科学</a>
+<label for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          💻 计算机科学
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">⌨️ 软件工程</a>
+<label for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+          ⌨️ 软件工程
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_2">
+<span class="md-nav__icon md-icon"></span>
+          数据结构与算法
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">面向对象程序设计</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_3">
+<span class="md-nav__icon md-icon"></span>
+          面向对象程序设计
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../">🤖 人工智能</a>
+<label for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+          🤖 人工智能
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
+          统计学习
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_3_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_2">
+<span class="md-nav__icon md-icon"></span>
+          统计学习
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          𝟏. k近邻法
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        𝟏. k近邻法
+      </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-分类问题1">
+    1 分类问题1
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-knn模型构建">
+    2 kNN模型构建
+  </a>
+<nav aria-label="2 kNN模型构建" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#21-提出2">
+    2.1 提出2
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#22-构建流程">
+    2.2 构建流程
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-模型要素">
+    3 模型要素
+  </a>
+<nav aria-label="3 模型要素" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31-k-值选择">
+    3.1 k 值选择
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#32-距离度量9">
+    3.2 距离度量9
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#33-决策规则">
+    3.3 决策规则
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-模型预测">
+    4 模型预测
+  </a>
+<nav aria-label="4 模型预测" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#41-预测流程">
+    4.1 预测流程
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#42-python实现">
+    4.2 Python实现
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-改进">
+    5 改进
+  </a>
+<nav aria-label="5 改进" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#51-主要挑战">
+    5.1 主要挑战
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#52-kd树">
+    5.2 kd树
+  </a>
+<nav aria-label="5.2 kd树" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#521-构造11">
+    5.2.1 构造11
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#522-搜索">
+    5.2.2 搜索
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#523-算法">
+    5.2.3 算法
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#524-python实现">
+    5.2.4 Python实现
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#53-马氏距离">
+    5.3 马氏距离
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-分类问题1">
+    1 分类问题1
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-knn模型构建">
+    2 kNN模型构建
+  </a>
+<nav aria-label="2 kNN模型构建" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#21-提出2">
+    2.1 提出2
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#22-构建流程">
+    2.2 构建流程
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-模型要素">
+    3 模型要素
+  </a>
+<nav aria-label="3 模型要素" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31-k-值选择">
+    3.1 k 值选择
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#32-距离度量9">
+    3.2 距离度量9
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#33-决策规则">
+    3.3 决策规则
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-模型预测">
+    4 模型预测
+  </a>
+<nav aria-label="4 模型预测" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#41-预测流程">
+    4.1 预测流程
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#42-python实现">
+    4.2 Python实现
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-改进">
+    5 改进
+  </a>
+<nav aria-label="5 改进" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#51-主要挑战">
+    5.1 主要挑战
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#52-kd树">
+    5.2 kd树
+  </a>
+<nav aria-label="5.2 kd树" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#521-构造11">
+    5.2.1 构造11
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#522-搜索">
+    5.2.2 搜索
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#523-算法">
+    5.2.3 算法
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#524-python实现">
+    5.2.4 Python实现
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#53-马氏距离">
+    5.3 马氏距离
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="k近邻法">k近邻法<a class="headerlink" href="#k近邻法" title="跳转到此部分">·</a></h1>
+<p>kNN算法是一种基于特征向量空间的分类和回归算法，通过测量不同特征值之间的距离来进行预测。</p>
+<!--more-->
+<h2 id="1-分类问题1">1 分类问题<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><a class="headerlink" href="#1-分类问题1" title="跳转到此部分">·</a></h2>
+<ul>
+<li>一种监督学习问题，旨在对数据分类</li>
+<li>将输入数据映射到预定义的类别或标签</li>
+<li>
+<p>从已知的训练数据中学习一个分类模型，然后将该模型应用于新的、未知的数据，以预测其所属的类别</p>
+</li>
+<li>
+<p>垃圾邮件过滤、金融风险评估</p>
+</li>
+<li>医学诊断、生物信息学</li>
+<li>情感分析、客户分类</li>
+<li>图像识别</li>
+</ul>
+<h2 id="2-knn模型构建">2 kNN模型构建<a class="headerlink" href="#2-knn模型构建" title="跳转到此部分">·</a></h2>
+<h3 id="21-提出2">2.1 提出<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup><a class="headerlink" href="#21-提出2" title="跳转到此部分">·</a></h3>
+<div class="arithmatex">\[T=\{(x_1,y_1),(x_2,y_2),\cdots,(x_N,y_N)\}\]</div>
+<div class="arithmatex">\[y_i\in\mathcal{Y}=\{c_1,c_2,\cdots,c_K\}\]</div>
+<div class="arithmatex">\[y=\text{arg}\max\limits_{c_j} \sum\limits_{x_i\in N_k(x)} I(y_i=c_j)\]</div>
+<ul>
+<li>输入：特征向量（空间点）</li>
+<li>输出：类别（可以取多类）</li>
+<li>
+<p>已标注的训练集</p>
+</li>
+<li>
+<p>预测：多数表决（“近朱者赤” ）</p>
+</li>
+<li>不具有显式的学习过程</li>
+</ul>
+<p><strong>适用范围</strong>
+- 数值型和标称型<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
+<p><strong>优点</strong><sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup><sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>
+1. 直观、非参数化
+2. 对异常值不敏感
+3. 支持多类别</p>
+<p><strong>缺点</strong><sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup>
+1. 时间复杂度高
+2. 存储成本高
+3. “维度灾难”和数据不平衡</p>
+<h3 id="22-构建流程">2.2 构建流程<a class="headerlink" href="#22-构建流程" title="跳转到此部分">·</a></h3>
+<p>给定距离度量，k值与决策规则 [输入训练集T]
+1. 在训练集 T 中找出与 x 最邻近的 k 个点，涵盖这 个点的 x 的邻域记作 <span class="arithmatex">\(N_k(a)\)</span>
+2. 在 <span class="arithmatex">\(N_k(a)\)</span> 中根据分类决策规则决定 x 的类别 y</p>
+<p><strong>基本要素</strong>
+1. k 值选择
+2. 距离度量
+3. 决策规则</p>
+<p><a class="lightgallery" data-thumbnail="https://z1.ax1x.com/2023/11/01/piuKE6K.png" href="https://z1.ax1x.com/2023/11/01/piuKE6K.png">
+<img loading="lazy" src="https://z1.ax1x.com/2023/11/01/piuKE6K.png" width="50%"/></a></p>
+<p class="img-desc" style="text-align: center">▲ 特征空间划分。</p>
+<p>特殊情况：最近邻（k=1）</p>
+<h2 id="3-模型要素">3 模型要素<a class="headerlink" href="#3-模型要素" title="跳转到此部分">·</a></h2>
+<h3 id="31-k-值选择">3.1 k 值选择<a class="headerlink" href="#31-k-值选择" title="跳转到此部分">·</a></h3>
+<table>
+<thead>
+<tr>
+<th>k值</th>
+<th>偏小</th>
+<th>偏大</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>近似误差</td>
+<td>减小</td>
+<td>增大</td>
+</tr>
+<tr>
+<td>估计误差</td>
+<td>增大</td>
+<td>减小</td>
+</tr>
+</tbody>
+</table>
+<p>交叉验证以提高泛化性能。<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup></p>
+<h3 id="32-距离度量9">3.2 距离度量<sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup><a class="headerlink" href="#32-距离度量9" title="跳转到此部分">·</a></h3>
+<p>对于</p>
+<div class="arithmatex">\[x_i=(x_i^{(1)}, x_i^{(2)}, \cdots, x_i^{(n)})\]</div>
+<ul>
+<li><span class="arithmatex">\(L_p\)</span> 距离</li>
+</ul>
+<p><span class="arithmatex">\(<span class="arithmatex">\(L_p(x_i,x_j)=(\sum\limits_{l=1}^n |x_i^{(l)}-x_j^{(l)}|^p)^{1/p}\)</span>\)</span>
+- 欧氏距离</p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(L_2(x_i,x_j)=(\sum\limits_{l=1}^n |x_i^{(l)}-x_j^{(l)}|^2)^{1/2}\)</span>\)</span>
+- 曼哈顿距离</p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(L_1(x_i,x_j)=\sum\limits_{l=1}^n |x_i^{(l)}-x_j^{(l)}|\)</span>\)</span>
+- <span class="arithmatex">\(L_\infty\)</span> 距离</p>
+<div class="arithmatex">\[L_\infty (x_i,x_j)=\max\limits_l |x_i^{(l)}-x_j^{(l)}|\]</div>
+<h3 id="33-决策规则">3.3 决策规则<a class="headerlink" href="#33-决策规则" title="跳转到此部分">·</a></h3>
+<p><strong>多数表决</strong>
+由输入实例的 k 个邻近的训练实例中的多数类决定输入实例的类。</p>
+<ul>
+<li>分类函数</li>
+</ul>
+<p><span class="arithmatex">\(<span class="arithmatex">\(f:\mathbb{R}^n\rightarrow \{c_1,c_2,\cdots,c_K\}\)</span>\)</span>
+- 误分类概率</p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(P(Y\ne f(X))=1-P(Y=f(X))\)</span>\)</span>
+- 等价于风险经验最小化</p>
+<div class="arithmatex">\[\frac{1}{k}\sum\limits_{x_i\in N_k(x)} I(y_i\ne c_j)=1-\frac{1}{k}\sum\limits_{x_i\in N_k(x)} I(y_i=c_j)\]</div>
+<h2 id="4-模型预测">4 模型预测<a class="headerlink" href="#4-模型预测" title="跳转到此部分">·</a></h2>
+<h3 id="41-预测流程">4.1 预测流程<a class="headerlink" href="#41-预测流程" title="跳转到此部分">·</a></h3>
+<p>首先引入最简单的思路：线性扫描的方法。</p>
+<p><a class="lightgallery" data-thumbnail="https://z1.ax1x.com/2023/11/01/piuKkSx.png" href="https://z1.ax1x.com/2023/11/01/piuKkSx.png">
+<img loading="lazy" src="https://z1.ax1x.com/2023/11/01/piuKkSx.png" width="50%"/></a></p>
+<p class="img-desc" style="text-align: center">▲ kNN算法流程可视化。</p>
+<ol>
+<li>对未知类别的数据集中的每个点：<ul>
+<li>计算已知类别数据集众多点与当前点之间的距离；</li>
+<li>按照距离递增次序排序。</li>
+</ul>
+</li>
+<li>选取与当前点距离最小的k个点：<ul>
+<li>选定前k个点所在类别的出现频率</li>
+<li>返回前k个点出现频率最高的类别作为当前点的预测分类</li>
+</ul>
+</li>
+<li>重复步骤，完成对所有点的预测分类</li>
+</ol>
+<h3 id="42-python实现">4.2 Python实现<a class="headerlink" href="#42-python实现" title="跳转到此部分">·</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="k">class</span> <span class="nc">KNN</span><span class="p">:</span> 
+</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+</span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">k</span> <span class="o">=</span> <span class="n">k</span>
+</span><span id="__span-0-7"><a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+</span><span id="__span-0-8"><a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">X_train</span> <span class="o">=</span> <span class="n">X</span>
+</span><span id="__span-0-9"><a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">y_train</span> <span class="o">=</span> <span class="n">y</span>
+</span><span id="__span-0-10"><a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a>    <span class="k">def</span> <span class="nf">euclidean_distance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
+</span><span id="__span-0-11"><a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+</span><span id="__span-0-12"><a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+</span><span id="__span-0-13"><a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a>        <span class="n">y_pred</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_predict</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">X</span><span class="p">]</span>
+</span><span id="__span-0-14"><a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a>        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">y_pred</span><span class="p">)</span>
+</span><span id="__span-0-15"><a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a>    <span class="k">def</span> <span class="nf">_predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+</span><span id="__span-0-16"><a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a>        <span class="n">distances</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">euclidean_distance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x_train</span><span class="p">)</span> <span class="k">for</span> <span class="n">x_train</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">X_train</span><span class="p">]</span>
+</span><span id="__span-0-17"><a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a>        <span class="n">k_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">distances</span><span class="p">)[:</span><span class="bp">self</span><span class="o">.</span><span class="n">k</span><span class="p">]</span>
+</span><span id="__span-0-18"><a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a>        <span class="n">k_nearest_labels</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">y_train</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">k_indices</span><span class="p">]</span>
+</span><span id="__span-0-19"><a href="#__codelineno-0-19" id="__codelineno-0-19" name="__codelineno-0-19"></a>        <span class="n">most_common</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">k_nearest_labels</span><span class="p">)</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-0-20"><a href="#__codelineno-0-20" id="__codelineno-0-20" name="__codelineno-0-20"></a>        <span class="k">return</span> <span class="n">most_common</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-0-21"><a href="#__codelineno-0-21" id="__codelineno-0-21" name="__codelineno-0-21"></a> <span class="n">一个简单的例子</span><span class="err">：</span>
+</span><span id="__span-0-22"><a href="#__codelineno-0-22" id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="n">X_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
+</span><span id="__span-0-23"><a href="#__codelineno-0-23" id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="n">y_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+</span><span id="__span-0-24"><a href="#__codelineno-0-24" id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="n">X_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+</span><span id="__span-0-25"><a href="#__codelineno-0-25" id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="n">clf</span> <span class="o">=</span> <span class="n">KNN</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</span><span id="__span-0-26"><a href="#__codelineno-0-26" id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</span><span id="__span-0-27"><a href="#__codelineno-0-27" id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="n">predictions</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</span><span id="__span-0-28"><a href="#__codelineno-0-28" id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="nb">print</span><span class="p">(</span><span class="n">predictions</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="5-改进">5 改进<a class="headerlink" href="#5-改进" title="跳转到此部分">·</a></h2>
+<h3 id="51-主要挑战">5.1 主要挑战<a class="headerlink" href="#51-主要挑战" title="跳转到此部分">·</a></h3>
+<ol>
+<li>前置处理：特征的选择</li>
+<li>模型<ul>
+<li>合适的度量函数</li>
+<li>合适的K值</li>
+<li>降低训练和预测的复杂度</li>
+</ul>
+</li>
+</ol>
+<h3 id="52-kd树">5.2 kd树<a class="headerlink" href="#52-kd树" title="跳转到此部分">·</a></h3>
+<p>一种二叉树数据结构，用于优化搜索算法。</p>
+<p><strong>优势：</strong>
+1. 降低搜索维度
+2. 提高搜索效率
+3. 更少的存储需求
+4. 支持范围搜索</p>
+<p>可能因数据的特定分布而表现不佳。<sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup></p>
+<h4 id="521-构造11">5.2.1 构造<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">11</a></sup><a class="headerlink" href="#521-构造11" title="跳转到此部分">·</a></h4>
+<p><a class="lightgallery" data-thumbnail="https://z1.ax1x.com/2023/11/01/piuKif1.png" href="https://z1.ax1x.com/2023/11/01/piuKif1.png">
+<img loading="lazy" src="https://z1.ax1x.com/2023/11/01/piuKif1.png" width="50%"/></a></p>
+<p class="img-desc" style="text-align: center">▲ kd树的构造。</p>
+<ol>
+<li>构造根结点，使根结点对应于 k 维空间中包含所有实例点的超矩形区域。</li>
+<li>递归（生成子结点）：<ul>
+<li>选择坐标轴和切分点，确定一个超平面</li>
+<li>将当前超矩形区域切分为左右两个子区域</li>
+<li>直到子区域内没有实例时终止。</li>
+</ul>
+</li>
+<li>实例保存在相应的结点上。</li>
+</ol>
+<p><strong>如何选择：</strong>
+- 空间切分参照：坐标轴
+- 切分点的选择：中位数</p>
+<h4 id="522-搜索">5.2.2 搜索<a class="headerlink" href="#522-搜索" title="跳转到此部分">·</a></h4>
+<p><a class="lightgallery" data-thumbnail="https://z1.ax1x.com/2023/11/01/piuKAl6.png" href="https://z1.ax1x.com/2023/11/01/piuKAl6.png">
+<img loading="lazy" src="https://z1.ax1x.com/2023/11/01/piuKAl6.png" width="50%"/></a></p>
+<p class="img-desc" style="text-align: center">▲ kd树的搜索。</p>
+<h4 id="523-算法">5.2.3 算法<a class="headerlink" href="#523-算法" title="跳转到此部分">·</a></h4>
+<p>[输入] 已构造的 kd 树，目标点 x;</p>
+<p>[输出] x 的 k 近邻。</p>
+<ol>
+<li>在 kd 树中找出包含目标点 x 的叶结点：从根结点出发，递归地向下访问 kd 树。若目标点 x 当前维的坐标小于切分点的坐标，则移动到左子结点，否则移动到右子结点，直到子结点为叶结点为止。</li>
+<li>构建“当前 k 近邻点集”，将该叶结点插入“当前 k 近邻点集”，并计算该结点到目标点 x 的距离。</li>
+<li>递归地向上回退，在每个结点进行以下操作: <ul>
+<li>如果“当前 k 近邻点集”的元素数量 &lt; k，则将该结点插入“当前 k 近邻点集”，并计算该结点到目标点 x 的距离; </li>
+<li>如果“当前 k 近邻点集”的元素数量 = k，但该结点到目标点 x 的距离小于“当前 k 近邻点集”中最远 点到目标点 x 的距离，则将该结点插入“当前 k 近邻点集”，并删除原先的最远点。 </li>
+<li>检查另一子结点对应的区域是否与以目标点 x 为球心、以目标点 x 与“当前 k 近邻点集”中最远点的距离为半径的超球体相交。 如果相交，可能在另一个子结点对应的区域内存在距离目标点更近的点，移动到另一个子结点，接着，递归地进行 k 近邻搜索; 如果不相交，向上回退。</li>
+</ul>
+</li>
+<li>当回退到根结点时，搜索结束(若此时“当前 k 近邻点集”中的元素不足 k 个，则需要访问另一半树的结点)。 </li>
+<li>最后的“当前 k 近邻点集”中的 k 个点即为 x 的 k 近邻点。 </li>
+</ol>
+<h4 id="524-python实现">5.2.4 Python实现<a class="headerlink" href="#524-python实现" title="跳转到此部分">·</a></h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">left</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">data</span>
+</span><span id="__span-1-4"><a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">left</span>
+</span><span id="__span-1-5"><a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">right</span>
+</span><span id="__span-1-6"><a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="k">class</span> <span class="nc">KdTree</span><span class="p">:</span>
+</span><span id="__span-1-8"><a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-1-9"><a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">k</span> <span class="o">=</span> <span class="n">k</span>
+</span><span id="__span-1-10"><a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a>
+</span><span id="__span-1-11"><a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a>    <span class="k">def</span> <span class="nf">create_Tree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">depth</span><span class="p">):</span>
+</span><span id="__span-1-12"><a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">dataset</span><span class="p">:</span>
+</span><span id="__span-1-13"><a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a>            <span class="k">return</span> <span class="kc">None</span>
+</span><span id="__span-1-14"><a href="#__codelineno-1-14" id="__codelineno-1-14" name="__codelineno-1-14"></a>        <span class="n">mid_index</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+</span><span id="__span-1-15"><a href="#__codelineno-1-15" id="__codelineno-1-15" name="__codelineno-1-15"></a>        <span class="n">axis</span> <span class="o">=</span> <span class="n">depth</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span>
+</span><span id="__span-1-16"><a href="#__codelineno-1-16" id="__codelineno-1-16" name="__codelineno-1-16"></a>        <span class="n">sort_dataset</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="n">axis</span><span class="p">]))</span>
+</span><span id="__span-1-17"><a href="#__codelineno-1-17" id="__codelineno-1-17" name="__codelineno-1-17"></a>        <span class="n">mid_data</span> <span class="o">=</span> <span class="n">sort_dataset</span><span class="p">[</span><span class="n">mid_index</span><span class="p">]</span>
+</span><span id="__span-1-18"><a href="#__codelineno-1-18" id="__codelineno-1-18" name="__codelineno-1-18"></a>        <span class="n">cur_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">mid_data</span><span class="p">)</span>
+</span><span id="__span-1-19"><a href="#__codelineno-1-19" id="__codelineno-1-19" name="__codelineno-1-19"></a>        <span class="n">left_data</span> <span class="o">=</span> <span class="n">sort_dataset</span><span class="p">[:</span><span class="n">mid_index</span><span class="p">]</span>
+</span><span id="__span-1-20"><a href="#__codelineno-1-20" id="__codelineno-1-20" name="__codelineno-1-20"></a>        <span class="n">right_data</span> <span class="o">=</span> <span class="n">sort_dataset</span><span class="p">[</span><span class="n">mid_index</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span>
+</span><span id="__span-1-21"><a href="#__codelineno-1-21" id="__codelineno-1-21" name="__codelineno-1-21"></a>        <span class="n">cur_node</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_Tree</span><span class="p">(</span><span class="n">left_data</span><span class="p">,</span> <span class="n">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-1-22"><a href="#__codelineno-1-22" id="__codelineno-1-22" name="__codelineno-1-22"></a>        <span class="n">cur_node</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_Tree</span><span class="p">(</span><span class="n">right_data</span><span class="p">,</span> <span class="n">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-1-23"><a href="#__codelineno-1-23" id="__codelineno-1-23" name="__codelineno-1-23"></a>        <span class="k">return</span> <span class="n">cur_node</span>
+</span><span id="__span-1-24"><a href="#__codelineno-1-24" id="__codelineno-1-24" name="__codelineno-1-24"></a>    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tree</span><span class="p">,</span> <span class="n">new_data</span><span class="p">):</span>
+</span><span id="__span-1-25"><a href="#__codelineno-1-25" id="__codelineno-1-25" name="__codelineno-1-25"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">near_point</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="__span-1-26"><a href="#__codelineno-1-26" id="__codelineno-1-26" name="__codelineno-1-26"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">near_val</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="__span-1-27"><a href="#__codelineno-1-27" id="__codelineno-1-27" name="__codelineno-1-27"></a>        <span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">depth</span><span class="p">):</span>
+</span><span id="__span-1-28"><a href="#__codelineno-1-28" id="__codelineno-1-28" name="__codelineno-1-28"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="n">node</span><span class="p">:</span>
+</span><span id="__span-1-29"><a href="#__codelineno-1-29" id="__codelineno-1-29" name="__codelineno-1-29"></a>                <span class="k">return</span>
+</span><span id="__span-1-30"><a href="#__codelineno-1-30" id="__codelineno-1-30" name="__codelineno-1-30"></a>            <span class="n">axis</span> <span class="o">=</span> <span class="n">depth</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span>
+</span><span id="__span-1-31"><a href="#__codelineno-1-31" id="__codelineno-1-31" name="__codelineno-1-31"></a>            <span class="k">if</span> <span class="n">new_data</span><span class="p">[</span><span class="n">axis</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">[</span><span class="n">axis</span><span class="p">]:</span>
+</span><span id="__span-1-32"><a href="#__codelineno-1-32" id="__codelineno-1-32" name="__codelineno-1-32"></a>                <span class="n">dfs</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-1-33"><a href="#__codelineno-1-33" id="__codelineno-1-33" name="__codelineno-1-33"></a>            <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-1-34"><a href="#__codelineno-1-34" id="__codelineno-1-34" name="__codelineno-1-34"></a>                <span class="n">dfs</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-1-35"><a href="#__codelineno-1-35" id="__codelineno-1-35" name="__codelineno-1-35"></a>            <span class="n">dist</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">new_data</span><span class="p">,</span> <span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+</span><span id="__span-1-36"><a href="#__codelineno-1-36" id="__codelineno-1-36" name="__codelineno-1-36"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">near_val</span> <span class="ow">or</span> <span class="n">dist</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">near_val</span><span class="p">:</span>
+</span><span id="__span-1-37"><a href="#__codelineno-1-37" id="__codelineno-1-37" name="__codelineno-1-37"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">near_val</span> <span class="o">=</span> <span class="n">dist</span>
+</span><span id="__span-1-38"><a href="#__codelineno-1-38" id="__codelineno-1-38" name="__codelineno-1-38"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">near_point</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">val</span>
+</span><span id="__span-1-39"><a href="#__codelineno-1-39" id="__codelineno-1-39" name="__codelineno-1-39"></a>
+</span><span id="__span-1-40"><a href="#__codelineno-1-40" id="__codelineno-1-40" name="__codelineno-1-40"></a>            <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">new_data</span><span class="p">[</span><span class="n">axis</span><span class="p">]</span> <span class="o">-</span> <span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">[</span><span class="n">axis</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">near_val</span><span class="p">:</span>
+</span><span id="__span-1-41"><a href="#__codelineno-1-41" id="__codelineno-1-41" name="__codelineno-1-41"></a>                <span class="k">if</span> <span class="n">new_data</span><span class="p">[</span><span class="n">axis</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">[</span><span class="n">axis</span><span class="p">]:</span>
+</span><span id="__span-1-42"><a href="#__codelineno-1-42" id="__codelineno-1-42" name="__codelineno-1-42"></a>                    <span class="n">dfs</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> 
+</span><span id="__span-1-43"><a href="#__codelineno-1-43" id="__codelineno-1-43" name="__codelineno-1-43"></a>                <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-1-44"><a href="#__codelineno-1-44" id="__codelineno-1-44" name="__codelineno-1-44"></a>                    <span class="n">dfs</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-1-45"><a href="#__codelineno-1-45" id="__codelineno-1-45" name="__codelineno-1-45"></a>        <span class="n">dfs</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-1-46"><a href="#__codelineno-1-46" id="__codelineno-1-46" name="__codelineno-1-46"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">near_point</span>
+</span><span id="__span-1-47"><a href="#__codelineno-1-47" id="__codelineno-1-47" name="__codelineno-1-47"></a>
+</span><span id="__span-1-48"><a href="#__codelineno-1-48" id="__codelineno-1-48" name="__codelineno-1-48"></a>    <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point_1</span><span class="p">,</span> <span class="n">point_2</span><span class="p">):</span>
+</span><span id="__span-1-49"><a href="#__codelineno-1-49" id="__codelineno-1-49" name="__codelineno-1-49"></a>        <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-1-50"><a href="#__codelineno-1-50" id="__codelineno-1-50" name="__codelineno-1-50"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">k</span><span class="p">):</span>
+</span><span id="__span-1-51"><a href="#__codelineno-1-51" id="__codelineno-1-51" name="__codelineno-1-51"></a>            <span class="n">res</span> <span class="o">+=</span> <span class="p">(</span><span class="n">point_1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">point_2</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span>
+</span><span id="__span-1-52"><a href="#__codelineno-1-52" id="__codelineno-1-52" name="__codelineno-1-52"></a>        <span class="k">return</span> <span class="n">res</span> <span class="o">**</span> <span class="mf">0.5</span>
+</span><span id="__span-1-53"><a href="#__codelineno-1-53" id="__codelineno-1-53" name="__codelineno-1-53"></a><span class="n">data_set</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">9</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">],[</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span>
+</span><span id="__span-1-54"><a href="#__codelineno-1-54" id="__codelineno-1-54" name="__codelineno-1-54"></a><span class="n">new_data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+</span><span id="__span-1-55"><a href="#__codelineno-1-55" id="__codelineno-1-55" name="__codelineno-1-55"></a><span class="n">k</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_set</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span><span id="__span-1-56"><a href="#__codelineno-1-56" id="__codelineno-1-56" name="__codelineno-1-56"></a><span class="n">kd_tree</span> <span class="o">=</span> <span class="n">KdTree</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+</span><span id="__span-1-57"><a href="#__codelineno-1-57" id="__codelineno-1-57" name="__codelineno-1-57"></a><span class="n">our_tree</span> <span class="o">=</span> <span class="n">kd_tree</span><span class="o">.</span><span class="n">create_Tree</span><span class="p">(</span><span class="n">data_set</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-1-58"><a href="#__codelineno-1-58" id="__codelineno-1-58" name="__codelineno-1-58"></a><span class="n">predict</span> <span class="o">=</span> <span class="n">kd_tree</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">our_tree</span><span class="p">,</span> <span class="n">new_data</span><span class="p">)</span>
+</span><span id="__span-1-59"><a href="#__codelineno-1-59" id="__codelineno-1-59" name="__codelineno-1-59"></a><span class="nb">print</span><span class="p">(</span><span class="n">predict</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="53-马氏距离">5.3 马氏距离<a class="headerlink" href="#53-马氏距离" title="跳转到此部分">·</a></h3>
+<p>由P.C. Mahalanobis提出；基于样本分布的一种距离测量。</p>
+<ul>
+<li>考虑特征之间的相关性</li>
+<li>对数据的缩放不敏感</li>
+<li>考虑协方差结构</li>
+<li>适用于异常值和噪声数据<sup id="fnref:12"><a class="footnote-ref" href="#fn:12">12</a></sup></li>
+</ul>
+<p>广泛用于分类和聚类分析。</p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>垃圾邮件过滤：自动将电子邮件分为垃圾邮件和非垃圾邮件。<br/>
+医学诊断：基于患者的症状数据来诊断疾病或预测病人的疾病风险。<br/>
+金融风险评估：根据客户的财务和信用记录来评估客户的信用风险。<br/>
+情感分析：根据文本数据中的情感内容对文本进行情感分类，如积极、消极或中性。<br/>
+图像识别：对图像进行分类，例如识别数字、物体或人脸等。<br/>
+生物信息学：基因序列分类，如预测蛋白质功能或基因表达模式。<br/>
+客户分类：根据客户的行为和偏好将客户分成不同的市场细分。 <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p>KNN算法于1948年由Cover和Hart提出。<br/>
+存在一个样本数据集合，也称作训练样本集，并且样本集中每个数据都存在标签，即我们知道样本集中每个数据与所属分类的对应关系。输入没有标签的新数据后，将新数据的每个特征与样本集中数据对应的特征进行比较，然后算法提取样本集中特征最相似数据（最近邻）的分类标签。一般来说，只选择样本数据集中前k个最相似的数据。k一般不大于20，最后，选择k个中出现次数最多的分类，作为新数据的分类。 <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:3">
+<p>数值型数据是指具有数量意义的数据，可以进行数学运算和比较。这种数据通常表示为数字，例如年龄、温度、身高等。在机器学习中，数值型数据常用于回归分析和连续变量的预测。标称型数据则是指无序分类的数据，其中每个值代表一个类别而没有数量意义。标称型数据通常表示为符号或字符串，例如血型、性别、品种等。在机器学习中，标称型数据通常用于分类问题，其中算法需要将输入数据映射到预定义的类别或标签。<br/>
+k最近邻算法 (kNN) 适用于处理这两种类型的数据。对于数值型数据，它可以基于数值之间的距离进行分类；对于标称型数据，它可以根据邻近样本的标签进行投票，并将测试样本分类为获得最多投票的类别。因此，kNN 算法对于这两种数据类型都有较好的适用性。<br/>
+还有其他类型：<br/>
+顺序型数据：顺序型数据是一种具有顺序或等级关系的数据类型，其中数据值之间存在某种顺序关系，但没有明确的数值差异。例如，学历等级（如小学、初中、高中、大学等）可以被视为顺序型数据。<br/>
+时间序列数据：时间序列数据是按照时间顺序排列的数据集合，通常是在一系列连续时间点上收集的数据。例如，股票价格、天气数据、经济指标等都属于时间序列数据。<br/>
+区间型数据：区间型数据是指数据值表示某个范围内的值，而不是特定的数值。这种数据类型通常用于表示测量的范围。例如，温度范围、年龄段等可以被视为区间型数据。<br/>
+比率型数据：比率型数据是具有固定比例关系的数据类型，其中数据之间存在明确的比率关系。比率型数据具有绝对零点，可以进行比较和数学运算。例如，长度、重量、时间间隔等都属于比率型数据。<br/>
+文本数据：文本数据是指以自然语言形式表示的数据，通常包含语句、段落或文档。处理文本数据通常需要使用自然语言处理技术来提取、转换和分析文本信息。 <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+<li id="fn:4">
+<p>老师反馈：这里的表述并不严谨，模型需要通过交叉验证来确认参数 k <a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">↩</a></p>
+</li>
+<li id="fn:5">
+<p>简单直观，非参数化：kNN 是一种非参数化方法，不对数据的分布做任何假设。因此，在处理复杂的数据集和未知的数据分布时，它通常具有很好的适应性。<br/>
+对异常值鲁棒：kNN 对异常值比较鲁棒，因为它基于周围数据点的多数投票来确定分类，可以减少异常值对结果的影响。<br/>
+适应多类别问题：kNN 能够很好地适应多类别分类问题，因为它可以通过投票的方式来确定一个实例所属的类别。<br/>
+但是对高维数据的处理效率较低，需要大量的存储空间和计算时间；在数据不平衡或噪声较多的情况下，它可能会产生较差的分类结果。 <a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">↩</a></p>
+</li>
+<li id="fn:6">
+<p>计算成本高：kNN 算法需要计算每个测试点与所有训练点之间的距离，因此在处理大规模数据集时，计算成本会变得非常高。<br/>
+存储成本高：除了计算成本高外，kNN 算法还需要存储整个训练集，这对于大规模数据集来说会占用大量的存储空间。<br/>
+维度灾难：随着数据维度的增加，kNN 算法的性能可能会下降，因为在高维空间中，数据点之间的距离变得更加稀疏，导致算法的效率降低。<br/>
+数据不平衡问题：在处理数据不平衡或噪声较多的数据集时，kNN 算法可能会受到数据分布的影响，从而导致分类性能下降。 <a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">↩</a></p>
+</li>
+<li id="fn:7">
+<p>指标函数 <span class="arithmatex">\(I\)</span>: 满足条件时为1.<br/>
+k 近邻法中，当训练集、距离度量(如欧氏距离)、k 值及分类决策规则(如多数表决)确定后，对于任何一个新的输入实例，它所属的类唯一地确定。这相当于根据上述要素将特征空间划分为一些子空间，确定子空间里的每个点所属的类。这一事实从最近邻算法中可以看得很清楚。<br/>
+特征空间中，对每个训练实例点 2，距离该点比其他点更近的所有点组成一个区域，叫作单元(cell)。每个训练实例点拥有一个单元，所有训练实例点的单元构成对特征空间的一个划分。最近邻法将实例 ai的类 yi 作为其单元中所有点的类标记(classlabel)。这样，每个单元的实例点的类别是确定的。 <a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">↩</a></p>
+</li>
+<li id="fn:8">
+<p>近似误差是指模型用于近似真实关系的误差，通常表示模型与真实值之间的差异。<br/>
+估计误差是指使用样本数据估计整体数据集特征时产生的误差。在 kNN 中，估计误差通常与样本的选择和样本的分布有关。<br/>
+K值的减小：模型变得复杂，容易发生过拟合。相当于用较小的邻域中的训练实例进行预测，只有与输入实例较近的(相似的)训练实例才会对预测结果起作用，对噪声敏感，即预测结果会对近邻的实例点非常敏感。如果邻近的实例点恰巧是噪声，预测就会出错。换句话说，k 值的减小就意味着整体模型变得复杂，容易发生过拟合。<br/>
+K值的增大：就意味着整体的模型变得简单.产生更平滑的决策边界，但可能会忽略数据的局部特征。这时与输入实例较远的(不相似的)训练实例也会对预测起作用，使预测发生错误。k 值的增大就意味着整体的模型变得简单。<br/>
+k 值一般取一个比较小的数值。通常采用交叉验证法来选取最优的k 值。具体可以取部分训练集作为测试集，在不同取值条件下观察最优值。 <a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">↩</a></p>
+</li>
+<li id="fn:9">
+<p>特征空间中两个实例点的距离是两个实例点相似程度的反映。k 近邻模型的特征空间一般是 n 维实数向量空间 <span class="arithmatex">\(R^n\)</span>，使用的距离是欧氏距离，但也可以是其他距离，如更一般的 <span class="arithmatex">\(L_p\)</span> 距离或 Minkowski 距离。 <a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">↩</a></p>
+</li>
+<li id="fn:10">
+<p>实现 k 近邻法时，主要考虑的问题是如何对训练数据进行快速 k 近邻搜索。这点在特征空间的维数大及训练数据容量大时尤其必要。k 近邻法最简单的实现方法是线性扫描。这时要计算输入实例与每一个训练实例的距离。当训练集很大时，计算非常耗时，这种方法是不可行的。为了提高k 近邻搜索的效率，可以考虑使用特殊的结构存储训练数据，以减少计算距离的次数。具体方法很多，下面介绍其中的 kd 树方法。<br/>
+使用 kd 树相比直接计算方法的主要好处在于它可以有效地减少计算量。kd 树是一种二叉树数据结构，它可以用于优化搜索算法，特别是在高维空间中。<br/>
+以下是 kd 树相对于直接计算方法的一些优势：<br/>
+降低搜索维度：kd 树能够将搜索范围缩小到与搜索点最近的局部区域，从而避免不必要的计算。<br/>
+提高搜索效率：在具有大量数据点的高维空间中，kd 树可以更快地定位最近邻居，因为它可以避免对所有数据点进行逐一比较。<br/>
+更少的存储需求：相对于直接计算方法，kd 树通常需要更少的存储空间，因为它可以通过二叉树结构有效地组织数据。<br/>
+支持范围搜索：除了最近邻搜索之外，kd 树还可以很容易地扩展到支持范围搜索，以查找在给定半径内的所有邻居。<br/>
+尽管 kd 树具有这些优势，但它可能会因数据的特定分布而表现不佳。例如，在存在大量密集聚集数据点的区域，kd 树的性能可能会下降。因此，在实际应用中，应该根据数据集的特点选择合适的算法来进行近邻搜索。 <a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">↩</a></p>
+</li>
+<li id="fn:11">
+<p>kd 树是一种对 k 维空间中的实例点进行存储以便对其进行快速检索的树形数据结构。kd 树是二叉树，表示对 k 维空间的一个划分。构造 kd 树相当于不断地用垂直于坐标轴的超平面将k 维空间切分，构成一系列的飞 维超矩形区域。kd树的每个结点对应于一个k 维超矩形区域。<br/>
+构造 kd 树的方法如下:构造根结点，使根结点对应于 k 维空间中包含所有实例点的超矩形区域:通过下面的递归方法，不断地对 k 维空间进行切分，生成子结点。在超矩形区域(结点)上选择一个坐标轴和在此坐标轴上的一个切分点，确定一个超平面，这个超平面通过选定的切分点并垂直于选定的坐标轴，将当前超矩形区域切分为左右两个子区域（子结点）；这时，实例被分到两个子区域。这个过程直到子区域内没有实例时终止（终止时的结点为叶结点）。在此过程中，将实例保存在相应的结点上。<br/>
+平衡树：使用中位数作为划分点可以保证树的相对平衡，避免出现极端情况下的不平衡树结构，从而使得搜索效率总体比较高，但未必最优。考虑一些离群点。 <a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 11 in the text">↩</a></p>
+</li>
+<li id="fn:12">
+<p>考虑特征之间的相关性：马氏距离能够考虑数据特征之间的相关性，而欧氏距离只考虑各个维度之间的直线距离。这意味着马氏距离在具有相关特征的数据集上能够提供更加准确的距离度量。<br/>
+对数据的缩放不敏感：在某些情况下，数据的不同特征可能具有不同的度量单位或尺度。马氏距离能够对数据的缩放不敏感，因此可以更好地处理这种情况，而欧氏距离可能受到数据尺度的影响。<br/>
+考虑协方差结构：马氏距离考虑了数据的协方差结构，因此可以更好地捕捉数据特征之间的线性关系。这使得马氏距离在处理多元正态分布数据时能够提供更加准确的距离度量。<br/>
+适用于异常值和噪声数据：马氏距离能够对异常值和噪声数据具有更好的鲁棒性，因为它考虑了数据的协方差结构，可以减少这些异常值对距离度量的影响。 <a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 12 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+</article>
+</div>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            回到页面顶部
+          </button>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: Index" class="md-footer__link md-footer__link--prev" href="../../" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                上一页
+              </span>
+<div class="md-ellipsis">
+                Index
+              </div>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+<b>𝐴𝑙𝑤𝑎𝑦𝑠 𝑜𝑛 𝒕𝒉𝒆 𝒓𝒐𝒂𝒅.</b><br/>𝐒𝐩𝐚𝐫𝐤𝙻𝚊𝚗𝚍 © 2015-2024
+    </div>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://github.com/Ralvine" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+<a class="md-social__link" href="mailto:ralvine.yjy@hotmail.com" rel="noopener" target="_blank" title="">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l217.6 163.2c11.4 8.5 27 8.5 38.4 0l217.6-163.2c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48H48zM0 176v208c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V176L294.4 339.2a63.9 63.9 0 0 1-76.8 0L0 176z"></path></svg>
+</a>
+<a class="md-social__link" href="http://sparkland.ralvines.top/feed_rss_created.xml" rel="noopener" target="_blank" title="sparkland.ralvines.top">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 64c0-17.7 14.3-32 32-32 229.8 0 416 186.2 416 416 0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96 14.3 96 0 81.7 0 64zm0 352a64 64 0 1 1 128 0 64 64 0 1 1-128 0zm32-256c159.1 0 288 128.9 288 288 0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224-17.7 0-32-14.3-32-32s14.3-32 32-32z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.prune", "toc.follow", "content.code.annotate", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "navigation.footer"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../../../assets/javascripts/bundle.fac441b0.min.js"></script>
+<script src="../../../../javascripts/mathjax.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "fade", "closeEffect": "fade", "slideEffect": "slide"});})</script></body>
+</html>
