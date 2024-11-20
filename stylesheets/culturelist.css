@@ -48,7 +48,7 @@
 .media-meta-item.title {
     font-weight: 700;
     font-size:.85em;
-    font-family: Noto Serif SC, serif;
+    font-family: 'Noto Serif SC', serif;
 }
 
 .media-cover {
@@ -76,7 +76,7 @@
 }
 .media-meta-item .author {
     opacity:.65;
-    font-family: PingFang SC, Noto Sans SC, Noto Serif SC, Serif;
+    font-family: PingFang SC, 'Noto Sans SC', 'Noto Serif SC', Serif;
 }
 
 .media-meta-item .star-score {

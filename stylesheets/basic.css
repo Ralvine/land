@@ -13,7 +13,7 @@
 }*/
 
 body {
-    font-family: Noto Serif SC, serif;
+    font-family: 'Noto Serif SC', serif;
 }
 
 .md-content {
@@ -37,19 +37,24 @@ body {
     line-height: 1.75;
 }
 
+.md-typeset .headerlink {
+    font-size: .9rem;
+}
+
 .md-typeset .md-tag {
     background: none;
     padding: 0;
     margin-bottom: 0;
     border-radius: 0;
+    font-size: 1rem;
 }
 
-.md-typeset .md-tag::before {
+/*.md-typeset .md-tag::before {
     content: '# ';
-}
+}*/
 
 .md-typeset p {
-    font-family: PingFang SC, Noto Sans SC, Serif;
+    font-family: PingFang SC, 'Noto Sans SC', Serif;
 }
 
 .md-typeset code {
@@ -85,11 +90,11 @@ body {
 }
 
 .md-typeset blockquote p {
-    font-family: Noto Serif SC, serif;
+    font-family: 'Noto Serif SC', serif;
 }
 
 [dir=ltr] .md-typeset ol li, [dir=ltr] .md-typeset ul li {
-    font-family: PingFang SC, Noto Sans SC, Serif;
+    font-family: PingFang SC, 'Noto Sans SC', Serif;
 }
 
 .md-typeset h1 {

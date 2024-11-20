@@ -86,7 +86,7 @@
     opacity: .6;
 /*    border-bottom: solid 2px #ddd;*/
     border-bottom: solid 1px #ddd;
-    font-family: Noto Serif SC, Serif;
+    font-family: 'Noto Serif SC', Serif;
 }
 
 .changelog-time::before {
@@ -101,7 +101,7 @@
 /*    border: 1px solid #aaaaaa;*/
     color: #1e87f0;
     font-weight: 600;
-    font-family: PingFang SC, Noto Sans SC, Noto Serif SC, Serif;
+    font-family: PingFang SC, 'Noto Sans SC', 'Noto Serif SC', Serif;
 }
 
 [data-md-color-scheme="slate"] .changelog-type {
@@ -114,7 +114,7 @@
 .changelog-content {
     margin-top: 10px;
 /*    opacity: .75;*/
-    font-family: PingFang SC, Noto Sans SC, Noto Serif SC, Serif;
+    font-family: PingFang SC, 'Noto Sans SC', 'Noto Serif SC', Serif;
 }
 
 .changelog-content p {
@@ -126,7 +126,7 @@
     color: var(--md-default-fg-color);
     font-weight: 600;
     font-size: .8rem;
-    font-family: Noto Serif SC, serif;
+    font-family: 'Noto Serif SC', serif;
 }
 
 .changelog-type-lvtu::before {

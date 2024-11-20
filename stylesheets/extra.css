@@ -20,7 +20,7 @@
 
 
 [dir=ltr] .md-typeset ul li {
-    font-family: "Roboto Slab", Noto Serif SC, Serif;
+    font-family: "Roboto Slab", 'Noto Serif SC', Serif;
 }
 .md-typeset .items-center-text h2 {
     font-size: 1.2rem;
@@ -209,7 +209,7 @@ del {
 
 .brief {
     font-size: .75rem;
-    font-family: "Roboto Slab", Noto Serif SC, serif;
+    font-family: "Roboto Slab", 'Noto Serif SC', serif;
 }
 
 .highlight .o, .highlight .ow {
@@ -354,7 +354,7 @@ del {
 
 
 
-.md-typeset .md-tag {
+/*.md-typeset .md-tag {
     background: none;
     font-size: .8rem;
     line-height: 1;
@@ -366,13 +366,13 @@ del {
 .md-typeset .md-tag[href] {
     color: #888888;
     font-weight: 100;
-}
+}*/
 
 [data-md-color-scheme="slate"] .md-typeset .md-tag[href] {
     color: #ffffff;
 }
 
-.md-typeset .md-tags {
+/*.md-typeset .md-tags {
     margin-bottom: .125em;
     opacity: 0.7;
 }
@@ -381,7 +381,7 @@ del {
     .md-tag {
         font-size: .8rem;
     }
-}
+}*/
 
 
 
